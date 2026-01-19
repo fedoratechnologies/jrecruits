@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Frontend Engineer - JRecruits</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">J<span>Recruits</span></a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="employers.html">For Employers</a></li>
+        <li><a href="employers.html" class="btn btn-primary">Hire Talent</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Job Detail Header -->
+  <section class="job-detail-header" style="padding-top: 7rem;">
+    <div class="container" style="max-width: 56rem;">
+      <a href="jobs.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Jobs
+      </a>
+
+      <div class="job-detail-title">
+        <div>
+          <h1>Senior Frontend Engineer</h1>
+          <div class="job-detail-meta">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+              </svg>
+              TechCorp Inc.
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              San Francisco, CA
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Full-time
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              $150,000 - $200,000
+            </span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="openModal('applyModal')" style="box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);">
+          Apply Now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Content -->
+  <section class="section-white">
+    <div class="container job-content">
+      <h3>Description</h3>
+      <p>We are looking for an experienced Senior Frontend Engineer to join our growing team at TechCorp Inc. You will be responsible for building and maintaining high-quality web applications that serve millions of users worldwide.
+
+As a key member of our engineering team, you'll work closely with designers, product managers, and backend engineers to deliver exceptional user experiences. You'll have the opportunity to influence technical decisions and mentor junior developers.
+
+We value innovation, collaboration, and continuous learning. If you're passionate about creating beautiful, performant web applications and want to work with cutting-edge technologies, we'd love to hear from you.</p>
+      
+      <h3>Requirements</h3>
+      <ul>
+        <li>5+ years of experience with modern JavaScript frameworks (React, Vue, or Angular)</li>
+        <li>Strong proficiency in TypeScript and modern CSS (including CSS-in-JS solutions)</li>
+        <li>Experience with state management libraries (Redux, Zustand, or similar)</li>
+        <li>Familiarity with testing frameworks (Jest, Cypress, or Playwright)</li>
+        <li>Understanding of web performance optimization techniques</li>
+        <li>Experience with CI/CD pipelines and version control (Git)</li>
+        <li>Excellent communication skills and ability to work in a team environment</li>
+        <li>Bachelor's degree in Computer Science or equivalent practical experience</li>
+      </ul>
+
+      <h3>Benefits</h3>
+      <ul>
+        <li>Competitive salary and equity package</li>
+        <li>Comprehensive health, dental, and vision insurance</li>
+        <li>401(k) with company matching</li>
+        <li>Flexible work arrangements (hybrid/remote options)</li>
+        <li>Generous PTO and parental leave</li>
+        <li>Professional development budget</li>
+        <li>Free lunch and snacks in office</li>
+        <li>Annual company retreats</li>
+      </ul>
+
+      <div class="apply-cta">
+        <div>
+          <h3>Interested in this role?</h3>
+          <p>Take the next step in your career journey.</p>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="openModal('applyModal')" style="box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);">
+          Apply Now
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply Modal -->
+  <div class="modal-overlay" id="applyModal" onclick="closeModalOnOverlay(event, 'applyModal')">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Apply for Senior Frontend Engineer</h2>
+        <p>Fill out the form below. We'll review your application shortly.</p>
+      </div>
+      <div class="modal-body">
+        <form id="applyForm" onsubmit="submitJobApplication(event)">
+          <div class="form-group">
+            <label class="form-label" for="applicantName">Full Name</label>
+            <input type="text" id="applicantName" name="name" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicantEmail">Email</label>
+            <input type="email" id="applicantEmail" name="email" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="applicantPhone">Phone</label>
+            <input type="tel" id="applicantPhone" name="phone" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="resumeUrl">Resume Link (LinkedIn/Portfolio)</label>
+            <input type="url" id="resumeUrl" name="resumeUrl" class="form-input" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="coverLetter">Cover Letter</label>
+            <textarea id="coverLetter" name="coverLetter" class="form-textarea" placeholder="Briefly introduce yourself..." style="min-height: 100px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; height: 3rem;">
+            Submit Application
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">J<span>Recruits</span></div>
+          <p class="footer-desc">Building the future, one hire at a time. We connect exceptional talent with forward-thinking companies.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="jobs.html">For Candidates</a></li>
+            <li><a href="#">Executive Search</a></li>
+            <li><a href="#">Tech Recruiting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Salary Guide</a></li>
+            <li><a href="#">Interview Tips</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 JRecruits. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(event, modalId) {
+      if (event.target.classList.contains('modal-overlay')) {
+        closeModal(modalId);
+      }
+    }
+
+    // Form submission
+    function submitJobApplication(event) {
+      event.preventDefault();
+      alert('Application submitted successfully! Good luck! We\'ll be in touch soon.');
+      closeModal('applyModal');
+      document.getElementById('applyForm').reset();
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal('applyModal');
+      }
+    });
+  </script>
+</body>
+</html>
