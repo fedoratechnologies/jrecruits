@@ -1,455 +1,1955 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Your Next Role - JRecruits</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="/assets/logo_nav.png" alt="JRecruits Logo" class="navbar-logo">
-        <span class="brand-name">JRecruits</span>
-      </a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-      <ul class="navbar-nav" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="employers.html">For Employers</a></li>
-        <li><a href="#" class="btn btn-primary btn-signin">Sign In</a></li>
-      </ul>
-    </div>
-  </nav>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
 
-  <!-- Page Header -->
-  <section class="jobs-header" style="padding-top: 12rem;">
-    <div class="container">
-      <h1>Find Your Next Role</h1>
-      <p>Browse openings at innovative companies or submit a general application to our talent pool.</p>
-      
-      <div class="search-wrapper">
-        <div class="search-box">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
-          </svg>
-          <input type="text" id="searchInput" placeholder="Search by title, company, or location..." oninput="filterJobs()">
-        </div>
-        <button class="btn btn-primary btn-lg" onclick="openModal('applicationModal')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="17 8 12 3 7 8"/>
-            <line x1="12" y1="3" x2="12" y2="15"/>
-          </svg>
-          Upload Resume
-        </button>
-      </div>
-    </div>
-  </section>
+/* ===== CSS Variables ===== */
+:root {
+  /* Dark Tech Palette */
+  --background: hsl(222, 47%, 6%);
+  --background-secondary: hsl(222, 40%, 8%);
+  --foreground: hsl(210, 40%, 98%);
 
-  <!-- Jobs List -->
-  <section class="section section-slate">
-    <div class="container">
-      <div class="job-list" id="jobList">
-        <!-- Job Card 1 -->
-        <a href="job-detail.html?id=1" class="job-card">
-          <div>
-            <h3>Senior Frontend Engineer</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                TechCorp Inc.
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                San Francisco, CA
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $150,000 - $200,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
+  --card: hsl(222, 40%, 10%);
+  --card-foreground: hsl(210, 40%, 98%);
 
-        <!-- Job Card 2 -->
-        <a href="job-detail.html?id=2" class="job-card">
-          <div>
-            <h3>Product Manager</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                Innovate Labs
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                New York, NY
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $130,000 - $170,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
+  /* Primary - Electric Cyan */
+  --primary: hsl(190, 95%, 50%);
+  --primary-glow: hsla(190, 95%, 50%, 0.3);
+  --primary-foreground: hsl(222, 47%, 6%);
 
-        <!-- Job Card 3 -->
-        <a href="job-detail.html?id=3" class="job-card">
-          <div>
-            <h3>DevOps Engineer</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                CloudScale Systems
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Remote
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $120,000 - $160,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
+  /* Secondary - Deep Purple */
+  --secondary: hsl(262, 83%, 58%);
+  --secondary-glow: hsla(262, 83%, 58%, 0.3);
 
-        <!-- Job Card 4 -->
-        <a href="job-detail.html?id=4" class="job-card">
-          <div>
-            <h3>UX Designer</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                DesignFirst Studio
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Austin, TX
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $90,000 - $130,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
+  /* Accent - Magenta */
+  --accent: hsl(330, 85%, 60%);
+  --accent-glow: hsla(330, 85%, 60%, 0.3);
 
-        <!-- Job Card 5 -->
-        <a href="job-detail.html?id=5" class="job-card">
-          <div>
-            <h3>Data Scientist</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                DataDriven AI
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Seattle, WA
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $140,000 - $190,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
+  --muted: hsl(222, 30%, 15%);
+  --muted-foreground: hsl(215, 20%, 55%);
 
-        <!-- Job Card 6 -->
-        <a href="job-detail.html?id=6" class="job-card">
-          <div>
-            <h3>Backend Engineer</h3>
-            <div class="job-meta">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-                </svg>
-                FinTech Solutions
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                Chicago, IL
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                Full-time
-              </span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                $135,000 - $175,000
-              </span>
-            </div>
-          </div>
-          <span class="btn btn-primary">View Details</span>
-        </a>
-      </div>
+  --border: hsl(222, 30%, 18%);
+  --input: hsl(222, 30%, 15%);
+  --ring: hsl(190, 95%, 50%);
 
-      <!-- No Results Message (hidden by default) -->
-      <div id="noResults" style="display: none; text-align: center; padding: 5rem 0; color: var(--slate-500);">
-        No jobs found matching your search.
-      </div>
-    </div>
-  </section>
+  --radius: 0.75rem;
 
-  <!-- Application Modal -->
-  <div class="modal-overlay" id="applicationModal" onclick="closeModalOnOverlay(event, 'applicationModal')">
-    <div class="modal">
-      <div class="modal-header">
-        <h2>Candidate Application</h2>
-      </div>
-      <div class="modal-body">
-        <form id="applicationForm" onsubmit="submitApplication(event)">
-          <div class="form-group">
-            <label class="form-label" for="name">Full Name</label>
-            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="roleOfInterest">Role of Interest</label>
-            <input type="text" id="roleOfInterest" name="roleOfInterest" class="form-input" placeholder="e.g. Senior Software Engineer">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Upload CV</label>
-            <div class="file-upload" onclick="document.getElementById('resumeFile').click()">
-              <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx" style="display: none;" onchange="updateFileName(this)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="17 8 12 3 7 8"/>
-                <line x1="12" y1="3" x2="12" y2="15"/>
-              </svg>
-              <p id="fileName">No file chosen</p>
-              <span>PDF, DOCX up to 10MB</span>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; height: 3rem; font-size: 1.125rem;">
-            Submit Application
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+  /* Slate colors */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
-            <img src="/assets/logo_nav.png" alt="JRecruits Logo" class="footer-logo">
-            <span class="footer-brand-name">JRecruits</span>
-          </div>
-          <p class="footer-desc">Building the future, one hire at a time. We connect exceptional talent with forward-thinking companies.</p>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="jobs.html">For Candidates</a></li>
-            <li><a href="#">Executive Search</a></li>
-            <li><a href="#">Tech Recruiting</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Salary Guide</a></li>
-            <li><a href="#">Interview Tips</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 JRecruits. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  --white: #ffffff;
+  --black: #000000;
 
-  <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
-    }
+  /* Blue accents */
+  --blue-100: #dbeafe;
+  --purple-100: #f3e8ff;
+  --purple-600: #9333ea;
+  --teal-100: #ccfbf1;
+  --teal-600: #0d9488;
+}
 
-    // Search filter
-    function filterJobs() {
-      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const jobCards = document.querySelectorAll('.job-card');
-      let visibleCount = 0;
+/* ===== Base Styles ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
 
-      jobCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(searchTerm)) {
-          card.style.display = 'flex';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
+html {
+  scroll-behavior: smooth;
+}
 
-      document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
 
-    // Modal functions
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('active');
-      document.body.style.overflow = '';
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    function closeModalOnOverlay(event, modalId) {
-      if (event.target.classList.contains('modal-overlay')) {
-        closeModal(modalId);
-      }
-    }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-    // File upload
-    function updateFileName(input) {
-      const fileName = input.files[0] ? input.files[0].name : 'No file chosen';
-      document.getElementById('fileName').textContent = fileName;
-    }
+/* ===== Utility Classes ===== */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-    // Form submission
-    function submitApplication(event) {
-      event.preventDefault();
-      alert('Application submitted successfully! We will be in touch soon.');
-      closeModal('applicationModal');
-      document.getElementById('applicationForm').reset();
-      document.getElementById('fileName').textContent = 'No file chosen';
-    }
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModal('applicationModal');
-      }
-    });
-  </script>
-</body>
-</html>
+/* ===== Navigation ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 15, 28, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navbar-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: -25px;
+}
+
+.brand-code {
+  color: var(--primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.brand-binary {
+  color: var(--muted-foreground);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.btn-signin {
+  color: var(--primary-foreground) !important;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav a {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+  font-size: 0.9375rem;
+}
+
+.navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar-nav .btn {
+  margin-left: 1rem;
+}
+
+/* Mobile Navigation */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .navbar-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), hsl(200, 95%, 45%));
+  color: var(--primary-foreground);
+  box-shadow: 0 0 30px var(--primary-glow), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px var(--primary-glow), 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-lg {
+  height: 3.5rem;
+  padding: 0 2.5rem;
+  font-size: 1rem;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.hero-glow-1 {
+  top: 10%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: var(--primary-glow);
+  opacity: 0.4;
+}
+
+.hero-glow-2 {
+  bottom: 10%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: var(--secondary-glow);
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-tagline {
+  font-family: 'Sora', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-tagline {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-tagline {
+    font-size: 4.5rem;
+  }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--white);
+  max-width: 38rem;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+}
+
+/* ===== Section Styles ===== */
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-white {
+  background-color: var(--slate-50);
+  color: var(--slate-900);
+}
+
+.section-white .section-header h2 {
+  color: var(--slate-900);
+}
+
+.section-slate {
+  background-color: var(--background-secondary);
+}
+
+.section-dark {
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(20, 184, 166, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.section-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: var(--primary-glow);
+  border-radius: 50%;
+  filter: blur(100px);
+  transform: translate(50%, -50%);
+  pointer-events: none;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--muted-foreground);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .section-header h2 {
+    font-size: 3rem;
+  }
+}
+
+/* ===== About Section ===== */
+.about-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+}
+
+/* ===== Why JRecruits Grid ===== */
+.why-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.why-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-card:nth-child(1) { transition-delay: 0.1s; }
+.why-card:nth-child(2) { transition-delay: 0.2s; }
+.why-card:nth-child(3) { transition-delay: 0.3s; }
+.why-card:nth-child(4) { transition-delay: 0.4s; }
+
+.why-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 40px var(--primary-glow);
+  transform: translateY(-5px);
+}
+
+.why-icon {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-icon svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-card:hover .why-icon svg {
+  transform: scale(1.1);
+  color: var(--foreground);
+}
+
+.why-card h3 {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.why-card p {
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* ===== Services Grid ===== */
+.services-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.service-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:nth-child(1) { transition-delay: 0.1s; }
+.service-card:nth-child(2) { transition-delay: 0.2s; }
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.employers-card:hover {
+  border-color: var(--primary);
+}
+
+.candidates-card:hover {
+  border-color: var(--secondary);
+}
+
+.service-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employers-card .service-icon {
+  color: hsl(190, 80%, 40%);
+}
+
+.candidates-card .service-icon {
+  color: var(--secondary);
+}
+
+.service-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--slate-900);
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--slate-600);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: gap 0.3s ease;
+}
+
+.employers-card .service-link {
+  color: hsl(190, 80%, 40%);
+}
+
+.candidates-card .service-link {
+  color: var(--secondary);
+}
+
+.service-card:hover .service-link {
+  gap: 0.75rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ===== Process Timeline ===== */
+.process-timeline {
+  display: grid;
+  gap: 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.process-step {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.process-step.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-step:nth-child(1) { transition-delay: 0.1s; }
+.process-step:nth-child(2) { transition-delay: 0.2s; }
+.process-step:nth-child(3) { transition-delay: 0.3s; }
+.process-step:nth-child(4) { transition-delay: 0.4s; }
+
+.step-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.step-content h3 {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.step-content p {
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* ===== Vision & Mission ===== */
+.vm-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .vm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vm-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.vm-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vm-card:nth-child(1) { transition-delay: 0.1s; }
+.vm-card:nth-child(2) { transition-delay: 0.2s; }
+
+.vm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.vision-card::before {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.mission-card::before {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+.vm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.vm-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-card .vm-icon {
+  color: var(--primary);
+}
+
+.mission-card .vm-icon {
+  color: var(--secondary);
+}
+
+.vm-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.vm-card:hover .vm-icon svg {
+  transform: scale(1.1);
+}
+
+.vm-card h3 {
+  font-size: 1.5rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.vm-card p {
+  font-size: 1.0625rem;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+/* ===== CTA Section ===== */
+.section-cta {
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, var(--primary-glow), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.cta-content > p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cta-content h2 {
+    font-size: 3rem;
+  }
+}
+
+/* ===== Contact Grid ===== */
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-card:nth-child(1) { transition-delay: 0.1s; }
+.contact-card:nth-child(2) { transition-delay: 0.2s; }
+.contact-card:nth-child(3) { transition-delay: 0.3s; }
+
+.contact-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.contact-icon {
+  margin-bottom: 1rem;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon svg {
+  transform: scale(1.1);
+}
+
+.contact-card h3 {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.contact-label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.contact-link {
+  color: var(--primary);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+}
+
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.footer-brand-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: -10px;
+}
+
+.footer-company-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  color: var(--muted-foreground);
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: var(--muted-foreground);
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* ============================================
+   EXISTING PAGES STYLES (Jobs, Employers, etc.)
+   ============================================ */
+
+/* ===== Forms ===== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--slate-700);
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: var(--slate-900);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--slate-400);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--white);
+  border-radius: 1rem;
+  border: 1px solid var(--slate-100);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* ===== Page Headers (for jobs.html, employers.html) ===== */
+.page-header {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header.dark {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 10;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+/* ===== Jobs Page ===== */
+.jobs-header {
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.jobs-header h1 {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .jobs-header h1 {
+    font-size: 3rem;
+  }
+}
+
+.jobs-header > .container > p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .search-wrapper {
+    flex-direction: row;
+  }
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+}
+
+.search-box input {
+  width: 100%;
+  height: 3.5rem;
+  padding-left: 3rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.search-box input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.1);
+  outline: none;
+}
+
+/* ===== Job Cards ===== */
+.job-list {
+  max-width: 56rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--card);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .job-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.job-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.job-card h3 {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .job-meta {
+    margin-bottom: 0;
+  }
+}
+
+.job-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.job-card .btn {
+  white-space: nowrap;
+}
+
+/* ===== Job Detail Page ===== */
+.job-detail-header {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary);
+}
+
+.job-detail-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .job-detail-title {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.job-detail-title h1 {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.job-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: var(--muted-foreground);
+  margin-top: 1rem;
+}
+
+.job-detail-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job-detail-meta svg {
+  color: var(--primary);
+}
+
+.job-content {
+  padding: 3rem 0;
+  max-width: 56rem;
+  margin: 0 auto;
+  background: var(--background);
+}
+
+.job-content h3 {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.job-content h3:first-child {
+  margin-top: 0;
+}
+
+.job-content p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.job-content ul {
+  color: var(--muted-foreground);
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.job-content li {
+  margin-bottom: 0.5rem;
+}
+
+.apply-cta {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .apply-cta {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+.apply-cta h3 {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin: 0 0 0.25rem 0;
+}
+
+.apply-cta p {
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+/* ===== Form Panel (Employers Page) ===== */
+.form-panel {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--slate-100);
+}
+
+.form-panel h3 {
+  font-size: 1.5rem;
+  color: var(--slate-900);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Two Column Layout ===== */
+.two-col-layout {
+  display: grid;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .two-col-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Benefits List (Employers Page) ===== */
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon.blue {
+  background: var(--blue-100);
+  color: hsl(190, 80%, 40%);
+}
+
+.benefit-icon.purple {
+  background: var(--purple-100);
+  color: var(--purple-600);
+}
+
+.benefit-icon.teal {
+  background: var(--teal-100);
+  color: var(--teal-600);
+}
+
+.benefit-item h3 {
+  font-size: 1.25rem;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  color: var(--slate-600);
+}
+
+/* ===== Trust Section ===== */
+.trust-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--slate-50);
+  border-radius: 1rem;
+  border: 1px solid var(--slate-100);
+}
+
+.trust-section h4 {
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 1rem;
+}
+
+.trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.trust-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--slate-400);
+}
+
+/* ===== Modal / Dialog ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: var(--slate-900);
+  margin-bottom: 0.25rem;
+}
+
+.modal-header p {
+  color: var(--slate-600);
+  font-size: 0.875rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* ===== File Upload ===== */
+.file-upload {
+  border: 2px dashed var(--slate-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background: var(--slate-50);
+  transition: border-color 0.2s ease;
+}
+
+.file-upload:hover {
+  border-color: var(--primary);
+}
+
+.file-upload svg {
+  color: var(--slate-400);
+  margin-bottom: 0.5rem;
+}
+
+.file-upload p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  font-weight: 500;
+  margin: 0;
+}
+
+.file-upload span {
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+
+/* ===== Spinner ===== */
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .navbar,
+  .footer,
+  .btn {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+}
+
+/* ===== Legacy Support for Other Pages ===== */
+
+/* Image Card (used in original index) */
+.image-card {
+  max-width: 64rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.image-card-inner {
+  aspect-ratio: 16 / 9;
+  background: var(--slate-900);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.image-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.6), transparent);
+}
+
+.image-card-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.image-card-content h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.image-card-content p {
+  color: var(--slate-200);
+}
+
+/* Feature Grid */
+.feature-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.feature-card-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-card-icon {
+  transform: scale(1.1);
+}
+
+.feature-card-icon.blue {
+  background: rgba(20, 184, 166, 0.1);
+  color: var(--primary);
+}
+
+.feature-card-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--secondary);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+
+.feature-card .link {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .link {
+  transform: translateX(4px);
+}
+
+.feature-card .link.blue {
+  color: var(--primary);
+}
+
+.feature-card .link.purple {
+  color: var(--secondary);
+}
+
+/* Split Section */
+.split-section {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .split-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.split-section img {
+  max-width: 32rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
+}
+
+.split-section h2 {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.split-section > div > p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.check-list svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Guarantee Section */
+.guarantee-section {
+  padding: 6rem 0;
+}
+
+.guarantee-grid {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .guarantee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.guarantee-badge {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.guarantee-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .guarantee-section h2 {
+    font-size: 3rem;
+  }
+}
+
+.guarantee-section > .container > div > div > p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.guarantee-image-wrapper {
+  position: relative;
+}
+
+.guarantee-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 184, 166, 0.2);
+  filter: blur(32px);
+  border-radius: 50%;
+}
+
+.guarantee-image-wrapper img {
+  position: relative;
+  z-index: 10;
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.guarantee-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Footer Grid (for other pages) */
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.footer-desc {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.footer h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
