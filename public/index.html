@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JRecruits - Building the Future, One Hire at a Time</title>
+  <title>JRecruits - The Right Talent. The First Time. Every Time.</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><img src="assets/logo_nav.png" alt="JRecruits Logo" class="navbar-logo"><span>Recruits</span></a>
+      <a href="index.html" class="navbar-brand">
+        <img src="/assets/logo_nav.png" alt="JRecruits Logo" class="navbar-logo">
+        <span class="brand-name">JRecruits</span>
+      </a>
       <button class="mobile-menu-btn" onclick="toggleMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -27,145 +30,170 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-blob-1"></div>
-    <div class="hero-blob-2"></div>
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
     <div class="container">
       <div class="hero-content">
-        <h1 class="animate-fade-in-up">
-          Building the Future,<br>
-          <span class="tech-gradient-text">One Hire at a Time.</span>
+        <p class="hero-tagline animate-fade-in-up">Hire Higher</p>
+        <h1 class="animate-fade-in-up animate-delay-1">
+          The Right Talent.<br>
+          The First Time.<br>
+          Every Time.
         </h1>
-        <p class="hero-subtitle animate-fade-in-up animate-delay-1">
-          We connect forward-thinking companies with exceptional talent. 
-          Specializing in tech, engineering, and executive placement.
+        <p class="hero-subtitle animate-fade-in-up animate-delay-2">
+          We connect exceptional tech talent with the right companies. Our precision hiring ensures a true fit that drives performance.
         </p>
-        <div class="hero-buttons animate-fade-in-up animate-delay-2">
+        <div class="hero-buttons animate-fade-in-up animate-delay-3">
           <a href="employers.html" class="btn btn-primary btn-lg">Hire Talent</a>
-          <a href="jobs.html" class="btn btn-outline btn-lg">Find a Job</a>
+          <a href="jobs.html" class="btn btn-outline btn-lg">Get Hired</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro Visual Section -->
-  <section class="section section-white">
-    <div class="container">
-      <div class="image-card">
-        <div class="image-card-inner">
-          <img src="assets/futuristic_abstract_recruitment_network_visualization.png" alt="Tech Recruitment Network">
-          <div class="image-card-overlay"></div>
-          <div class="image-card-content">
-            <h3>Expert Recruitment Services</h3>
-            <p>Connecting talent with opportunity worldwide.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem / Solution Section -->
-  <section class="section section-slate">
-    <div class="container">
-      <div class="split-section">
-        <div style="order: 2;">
-          <img src="assets/business_transition_to_automated_technology_visualization.png" alt="Business Automation Transition">
-        </div>
-        <div style="order: 1;">
-          <h2>Is your hiring process stuck in the past?</h2>
-          <p>
-            Traditional recruiting methods are slow, biased, and often ineffective. 
-            You're drowning in resumes but starving for talent. 
-            JRecruits changes the game with a data-driven, human-centric approach.
-          </p>
-          <ul class="check-list">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              Verified technical skills assessment
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              Culture-fit behavioral analysis
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              Rapid placement turnaround
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              Global talent pool access
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Grid -->
-  <section class="section section-white">
+  <!-- Who We Are Section -->
+  <section class="section section-dark" id="about">
+    <div class="section-grid-bg"></div>
     <div class="container">
       <div class="section-header">
-        <h2>Our Expertise</h2>
-        <p>Tailored solutions for every stage of your company's growth.</p>
+        <h2>Who We Are</h2>
       </div>
-      <div class="feature-grid">
-        <a href="employers.html" class="feature-card">
-          <div class="feature-card-icon blue">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-              <path d="M10 6h4"/>
-              <path d="M10 10h4"/>
-              <path d="M10 14h4"/>
-              <path d="M10 18h4"/>
+      <div class="about-content">
+        <p class="about-text">
+          JRecruits is an online recruitment agency built to solve one problem: misaligned hires that cost businesses time, money, and momentum. We believe recruitment isn't about speed alone it's about accuracy. That's why we take a tailored, consultative approach to every role and every candidate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why JRecruits Section -->
+  <section class="section section-slate" id="why">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why JRecruits</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
             </svg>
           </div>
-          <h3>For Employers</h3>
-          <p>Find the perfect candidate to drive your business forward. We handle sourcing, vetting, and placement.</p>
-          <span class="link blue">
-            Find Talent 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"/>
-              <path d="m12 5 7 7-7 7"/>
+          <h3>Precision Hiring</h3>
+          <p>We focus on skill, culture, and long-term fit not just CV matching.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
-          </span>
-        </a>
-        <a href="jobs.html" class="feature-card">
-          <div class="feature-card-icon purple">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          </div>
+          <h3>Right Talent, First Time</h3>
+          <p>Our process is designed to reduce turnover and repeat hiring.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3>Quality Over Quantity</h3>
+          <p>We present fewer candidates but only the right ones.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <h3>For Candidates</h3>
-          <p>Unlock your potential with opportunities at top-tier companies. We guide your career journey.</p>
-          <span class="link purple">
-            Browse Jobs 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"/>
-              <path d="m12 5 7 7-7 7"/>
+          <h3>Human-Centered</h3>
+          <p>We treat clients and candidates as partners, not transactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="section section-white" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>What We Do</h2>
+      </div>
+      <div class="services-grid">
+        <a href="employers.html" class="service-card employers-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
             </svg>
-          </span>
+          </div>
+          <h3>For Employers</h3>
+          <p>Tech recruitment, contract projects, and global tech talent solutions</p>
+          <span class="service-link">Learn More<span class="arrow"></span></span>
+        </a>
+        <a href="jobs.html" class="service-card candidates-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>For Candidates</h3>
+          <p>Career matching, guidance, and access to opportunities</p>
+          <span class="service-link">Learn More<span class="arrow"></span></span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Guarantee Section -->
+  <!-- How It Works Section -->
+  <section class="section section-dark" id="process">
+    <div class="section-grid-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Understand</h3>
+            <p>We learn your needs, expectations, culture, and goals.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Source and Screen</h3>
+            <p>We identify, assess, and vet candidates beyond surface level qualifications.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Match</h3>
+            <p>Only candidates who truly align are presented.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Place & Support</h3>
+            <p>We support both sides through placement to ensure success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 90-Day Guarantee Section -->
   <section class="section-dark guarantee-section">
     <div class="section-blob"></div>
     <div class="container">
@@ -177,10 +205,83 @@
             We are so confident in our vetting process that we offer a comprehensive replacement guarantee. 
             If a candidate doesn't work out within the first 90 days, we'll find a replacement at no extra cost.
           </p>
-          <a href="employers.html" class="btn btn-outline" style="background: white; color: var(--slate-900);">Start Hiring Risk-Free</a>
+          <a href="employers.html" class="btn btn-primary btn-lg">Start Hiring Risk-Free</a>
         </div>
         <div class="guarantee-image-wrapper">
           <img src="assets/premium_90-day_guarantee_futuristic_emblem.png" alt="90 Day Guarantee Badge">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Section -->
+  <section class="section section-slate" id="vision-mission">
+    <div class="container">
+      <div class="vm-grid">
+        <div class="vm-card vision-card">
+          <div class="vm-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Vision</h3>
+          <p>A world where every hire is a strategic victory.</p>
+        </div>
+        <div class="vm-card mission-card">
+          <div class="vm-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3>Mission</h3>
+          <p>To guarantee the right talent, the first time, accelerating our clients' success through thoughtful, precision driven recruitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-dark" id="contact">
+    <div class="section-grid-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">Ready to find the right talent or your next opportunity? Reach out to us.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>Email Us</h3>
+          <p class="contact-label">General Inquiries</p>
+          <a href="mailto:info@jrecruits.com" class="contact-link">info@jrecruits.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3>Career Inquiries</h3>
+          <p class="contact-label">Job Seekers & Candidates</p>
+          <a href="mailto:careers@jrecruits.com" class="contact-link">careers@jrecruits.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3>Call Us</h3>
+          <a href="tel:+251999274948" class="contact-link">+251 999 274 948</a>
         </div>
       </div>
     </div>
@@ -191,7 +292,10 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand"><img src="assets/logo_foot.png" alt="JRecruits Logo" class="footer-logo"><span>Recruits</span></div>
+          <div class="footer-brand">
+            <img src="/assets/logo_nav.png" alt="JRecruits Logo" class="footer-logo">
+            <span class="footer-brand-name">JRecruits</span>
+          </div>
           <p class="footer-desc">Building the future, one hire at a time. We connect exceptional talent with forward-thinking companies.</p>
         </div>
         <div>
@@ -233,6 +337,24 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
     }
+
+    // Add scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.why-card, .service-card, .process-step, .vm-card, .contact-card').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
