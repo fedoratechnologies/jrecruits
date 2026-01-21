@@ -127,7 +127,7 @@
         <h2>What We Do</h2>
       </div>
       <div class="services-grid">
-        <a href="employers.html" class="service-card employers-card">
+        <div class="service-card employers-card" onclick="toggleEmployerDetails()" id="employersCard">
           <div class="service-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
@@ -137,8 +137,8 @@
           <h3>For Employers</h3>
           <p>Tech recruitment, contract projects, and global tech talent solutions</p>
           <span class="service-link">Learn More<span class="arrow"></span></span>
-        </a>
-        <a href="jobs.html" class="service-card candidates-card">
+        </div>
+        <div class="service-card candidates-card" onclick="toggleCandidateDetails()" id="candidatesCard">
           <div class="service-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
@@ -148,7 +148,134 @@
           <h3>For Candidates</h3>
           <p>Career matching, guidance, and access to opportunities</p>
           <span class="service-link">Learn More<span class="arrow"></span></span>
-        </a>
+        </div>
+      </div>
+
+      <!-- Employer Details Panel -->
+      <div class="employer-details-panel" id="employerDetailsPanel">
+        <div class="employer-details-header">
+          <div class="employer-details-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <h3>For Employers</h3>
+          </div>
+          <button class="close-details-btn" onclick="toggleEmployerDetails()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="employer-details-content">
+          <!-- Section A -->
+          <div class="details-section">
+            <h4>A) Tech Recruitment</h4>
+            <div class="details-columns">
+              <div class="details-column">
+                <h5>We place:</h5>
+                <ul>
+                  <li>Full-time employees</li>
+                  <li>Part-time staff</li>
+                  <li>Contract & remote professionals</li>
+                </ul>
+              </div>
+              <div class="details-column">
+                <h5>Roles covered:</h5>
+                <ul>
+                  <li>Software Engineers (Frontend, Backend, Full Stack)</li>
+                  <li>DevOps & System Engineers</li>
+                  <li>Cybersecurity Analysts & Architects</li>
+                  <li>IT Specialists</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pricing-box">
+              <h5>Pricing:</h5>
+              <ul>
+                <li>20% of annual salary (minimum fee applied)</li>
+                <li>Flexible payment structures</li>
+                <li>Replacement guarantee (90 days)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section B -->
+          <div class="details-section">
+            <h4>B) Contract-Based Tech Projects</h4>
+            <p class="section-description">JRecruits delivers the undeliverable. We partner with world-class international teams to execute any task, no matter the complexity.</p>
+            <h5>Project Types:</h5>
+            <ul>
+              <li>Websites & mobile apps</li>
+              <li>Custom systems & platforms</li>
+              <li>Cybersecurity audits & protocol implementation</li>
+            </ul>
+          </div>
+
+          <!-- Section C -->
+          <div class="details-section">
+            <h4>C) Skill-Transfer & International Placement</h4>
+            <p class="section-description">We facilitate the global movement of talent, both by exporting Ethiopian professionals to international markets and importing specialized foreign expertise into Ethiopia—while operating globally beyond any single country.</p>
+            <h5>Our services include:</h5>
+            <ul>
+              <li>International placements of Ethiopian talent on fixed-term or long-term contracts abroad</li>
+              <li>Inbound foreign specialists deployed to Ethiopia to fill critical skill gaps</li>
+              <li>Remote global placements, enabling cross-border collaboration without relocation</li>
+              <li>Training-focused engagements, where international experts transfer knowledge and build local capacity when specific skills are not yet available in Ethiopia</li>
+            </ul>
+            <p class="closing-statement">Through this model, we ensure immediate access to global expertise while creating long-term, sustainable skill development—connecting Ethiopia to the world and the world to Ethiopia.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidate Details Panel -->
+      <div class="candidate-details-panel" id="candidateDetailsPanel">
+        <div class="candidate-details-header">
+          <div class="candidate-details-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <h3>For Candidates</h3>
+          </div>
+          <button class="close-details-btn" onclick="toggleCandidateDetails()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="candidate-details-content">
+          <div class="candidate-service-item">
+            <span class="candidate-arrow">→</span>
+            <div>
+              <h5>Job Matching</h5>
+              <p>Personalized matching based on your skills, experience, and career goals</p>
+            </div>
+          </div>
+          <div class="candidate-service-item">
+            <span class="candidate-arrow">→</span>
+            <div>
+              <h5>Career Guidance</h5>
+              <p>Professional advice to help you navigate your career path in tech</p>
+            </div>
+          </div>
+          <div class="candidate-service-item">
+            <span class="candidate-arrow">→</span>
+            <div>
+              <h5>CV Screening</h5>
+              <p>Expert review and optimization of your resume to stand out</p>
+            </div>
+          </div>
+          <div class="candidate-service-item">
+            <span class="candidate-arrow">→</span>
+            <div>
+              <h5>Vetted Opportunities</h5>
+              <p>Access to high-quality positions with companies that truly value talent</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -336,6 +463,40 @@
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
+    }
+
+    // Toggle employer details panel
+    function toggleEmployerDetails() {
+      const panel = document.getElementById('employerDetailsPanel');
+      const card = document.getElementById('employersCard');
+      const candidatePanel = document.getElementById('candidateDetailsPanel');
+      const candidateCard = document.getElementById('candidatesCard');
+      
+      // Close candidate panel if open
+      if (candidatePanel.classList.contains('active')) {
+        candidatePanel.classList.remove('active');
+        candidateCard.classList.remove('expanded');
+      }
+      
+      panel.classList.toggle('active');
+      card.classList.toggle('expanded');
+    }
+
+    // Toggle candidate details panel
+    function toggleCandidateDetails() {
+      const panel = document.getElementById('candidateDetailsPanel');
+      const card = document.getElementById('candidatesCard');
+      const employerPanel = document.getElementById('employerDetailsPanel');
+      const employerCard = document.getElementById('employersCard');
+      
+      // Close employer panel if open
+      if (employerPanel.classList.contains('active')) {
+        employerPanel.classList.remove('active');
+        employerCard.classList.remove('expanded');
+      }
+      
+      panel.classList.toggle('active');
+      card.classList.toggle('expanded');
     }
 
     // Add scroll animations
