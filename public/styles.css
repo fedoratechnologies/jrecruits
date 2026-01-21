@@ -663,6 +663,275 @@ img {
   transform: translateX(4px);
 }
 
+/* ===== Employer Details Panel ===== */
+.employer-details-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  background: var(--background);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.employer-details-panel.active {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 2rem;
+}
+
+.employer-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background-secondary);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.employer-details-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.employer-details-title svg {
+  color: var(--primary);
+}
+
+.employer-details-title h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.close-details-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-details-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+}
+
+.employer-details-content {
+  padding: 2rem;
+}
+
+.details-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.details-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.details-section h4 {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.details-section h5 {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.details-section p.section-description {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.details-section p.closing-statement {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  margin-top: 1.25rem;
+  font-style: italic;
+}
+
+.details-columns {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .details-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.details-column h5 {
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.details-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-section li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.details-section li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.pricing-box {
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.pricing-box h5 {
+  margin-bottom: 0.75rem;
+}
+
+/* Expanded state for employers card */
+.employers-card.expanded {
+  border-color: var(--primary);
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.employers-card.expanded .service-link::after {
+  content: ' ▲';
+  font-size: 0.75rem;
+}
+
+.employers-card:not(.expanded) .service-link::after {
+  content: ' ▼';
+  font-size: 0.75rem;
+}
+
+/* Expanded state for candidates card */
+.candidates-card.expanded {
+  border-color: var(--secondary);
+  box-shadow: 0 0 30px var(--secondary-glow);
+}
+
+.candidates-card.expanded .service-link::after {
+  content: ' ▲';
+  font-size: 0.75rem;
+}
+
+.candidates-card:not(.expanded) .service-link::after {
+  content: ' ▼';
+  font-size: 0.75rem;
+}
+
+/* ===== Candidate Details Panel ===== */
+.candidate-details-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  background: var(--background);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.candidate-details-panel.active {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 2rem;
+}
+
+.candidate-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background-secondary);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.candidate-details-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.candidate-details-title svg {
+  color: var(--secondary);
+}
+
+.candidate-details-title h3 {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.candidate-details-content {
+  padding: 2rem;
+}
+
+.candidate-service-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.candidate-service-item:last-child {
+  margin-bottom: 0;
+}
+
+.candidate-arrow {
+  color: var(--secondary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.candidate-service-item h5 {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+}
+
+.candidate-service-item p {
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
 /* ===== Process Timeline ===== */
 .process-timeline {
   display: grid;
