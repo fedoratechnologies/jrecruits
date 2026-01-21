@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senior Frontend Engineer - JRecruits</title>
+  <title id="pageTitle">Job Details - JRecruits</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,7 +23,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="jobs.html">Jobs</a></li>
         <li><a href="employers.html">For Employers</a></li>
-        <li><a href="#" class="btn btn-primary btn-signin">Sign In</a></li>
       </ul>
     </div>
   </nav>
@@ -40,37 +39,9 @@
 
       <div class="job-detail-title">
         <div>
-          <h1>Senior Frontend Engineer</h1>
-          <div class="job-detail-meta">
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-              </svg>
-              TechCorp Inc.
-            </span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              San Francisco, CA
-            </span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              Full-time
-            </span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-              $150,000 - $200,000
-            </span>
+          <h1 id="jobTitle">Loading...</h1>
+          <div class="job-detail-meta" id="jobMeta">
+            <!-- Meta will be inserted here -->
           </div>
         </div>
         <button class="btn btn-primary btn-lg" onclick="openModal('applyModal')" style="box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);">
@@ -82,38 +53,8 @@
 
   <!-- Job Content -->
   <section class="section section-dark">
-    <div class="container job-content">
-      <h3>Description</h3>
-      <p>We are looking for an experienced Senior Frontend Engineer to join our growing team at TechCorp Inc. You will be responsible for building and maintaining high-quality web applications that serve millions of users worldwide.
-
-As a key member of our engineering team, you'll work closely with designers, product managers, and backend engineers to deliver exceptional user experiences. You'll have the opportunity to influence technical decisions and mentor junior developers.
-
-We value innovation, collaboration, and continuous learning. If you're passionate about creating beautiful, performant web applications and want to work with cutting-edge technologies, we'd love to hear from you.</p>
-      
-      <h3>Requirements</h3>
-      <ul>
-        <li>5+ years of experience with modern JavaScript frameworks (React, Vue, or Angular)</li>
-        <li>Strong proficiency in TypeScript and modern CSS (including CSS-in-JS solutions)</li>
-        <li>Experience with state management libraries (Redux, Zustand, or similar)</li>
-        <li>Familiarity with testing frameworks (Jest, Cypress, or Playwright)</li>
-        <li>Understanding of web performance optimization techniques</li>
-        <li>Experience with CI/CD pipelines and version control (Git)</li>
-        <li>Excellent communication skills and ability to work in a team environment</li>
-        <li>Bachelor's degree in Computer Science or equivalent practical experience</li>
-      </ul>
-
-      <h3>Benefits</h3>
-      <ul>
-        <li>Competitive salary and equity package</li>
-        <li>Comprehensive health, dental, and vision insurance</li>
-        <li>401(k) with company matching</li>
-        <li>Flexible work arrangements (hybrid/remote options)</li>
-        <li>Generous PTO and parental leave</li>
-        <li>Professional development budget</li>
-        <li>Free lunch and snacks in office</li>
-        <li>Annual company retreats</li>
-      </ul>
-      </div>
+    <div class="container job-content" id="jobContent">
+      <!-- Content will be inserted here -->
     </div>
   </section>
 
@@ -121,7 +62,7 @@ We value innovation, collaboration, and continuous learning. If you're passionat
   <div class="modal-overlay" id="applyModal" onclick="closeModalOnOverlay(event, 'applyModal')">
     <div class="modal">
       <div class="modal-header">
-        <h2>Apply for Senior Frontend Engineer</h2>
+        <h2 id="modalTitle">Apply for this position</h2>
         <p>Fill out the form below. We'll review your application shortly.</p>
       </div>
       <div class="modal-body">
@@ -168,10 +109,10 @@ We value innovation, collaboration, and continuous learning. If you're passionat
         <div>
           <h4>Company</h4>
           <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html#about">Who We Are</a></li>
+            <li><a href="index.html#why">Why JRecruits</a></li>
+            <li><a href="index.html#services">What We Do</a></li>
+            <li><a href="index.html#process">How It Works</a></li>
           </ul>
         </div>
         <div>
@@ -179,17 +120,15 @@ We value innovation, collaboration, and continuous learning. If you're passionat
           <ul class="footer-links">
             <li><a href="employers.html">For Employers</a></li>
             <li><a href="jobs.html">For Candidates</a></li>
-            <li><a href="#">Executive Search</a></li>
-            <li><a href="#">Tech Recruiting</a></li>
+            <li><a href="index.html#contractModal">Contractual Projects / Freelancers</a></li>
           </ul>
         </div>
         <div>
           <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Salary Guide</a></li>
-            <li><a href="#">Interview Tips</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="mailto:info@jrecruits.com">info@jrecruits.com</a></li>
+            <li><a href="mailto:careers@jrecruits.com">careers@jrecruits.com</a></li>
+            <li><a href="tel:+251999274948">+251 999 274 948</a></li>
           </ul>
         </div>
       </div>
@@ -200,6 +139,202 @@ We value innovation, collaboration, and continuous learning. If you're passionat
   </footer>
 
   <script>
+    // Job data
+    const jobs = {
+      '1': {
+        title: 'Senior Frontend Engineer',
+        company: 'TechCorp Inc.',
+        location: 'Addis Ababa, ET',
+        type: 'Full-time',
+        salary: '3,000,000 - 4,000,000 ETB',
+        description: `We are looking for an experienced Senior Frontend Engineer to join our growing team at TechCorp Inc. You will be responsible for building and maintaining high-quality web applications that serve millions of users worldwide.
+
+As a key member of our engineering team, you'll work closely with designers, product managers, and backend engineers to deliver exceptional user experiences. You'll have the opportunity to influence technical decisions and mentor junior developers.
+
+We value innovation, collaboration, and continuous learning. If you're passionate about creating beautiful, performant web applications and want to work with cutting-edge technologies, we'd love to hear from you.`,
+        requirements: [
+          '5+ years of experience with modern JavaScript frameworks (React, Vue, or Angular)',
+          'Strong proficiency in TypeScript and modern CSS (including CSS-in-JS solutions)',
+          'Experience with state management libraries (Redux, Zustand, or similar)',
+          'Familiarity with testing frameworks (Jest, Cypress, or Playwright)',
+          'Understanding of web performance optimization techniques',
+          'Experience with CI/CD pipelines and version control (Git)',
+          'Excellent communication skills and ability to work in a team environment',
+          'Bachelor\'s degree in Computer Science or equivalent practical experience'
+        ],
+        benefits: [
+          'Competitive salary and equity package',
+          'Comprehensive health, dental, and vision insurance',
+          '401(k) with company matching',
+          'Flexible work arrangements (hybrid/remote options)',
+          'Generous PTO and parental leave',
+          'Professional development budget',
+          'Free lunch and snacks in office',
+          'Annual company retreats'
+        ]
+      },
+      '2': {
+        title: 'Product Manager',
+        company: 'Innovate Labs',
+        location: 'Addis Ababa, ET',
+        type: 'Full-time',
+        salary: '2,000,000 - 3,000,000 ETB',
+        description: `We are seeking a strategic and user-focused Product Manager to join Innovate Labs. In this role, you'll drive product vision and execution for innovative solutions that impact thousands of users across Ethiopia and beyond.
+
+As a Product Manager, you'll work at the intersection of business, technology, and user experience. You'll collaborate with cross-functional teams including engineering, design, marketing, and sales to deliver products that solve real problems and drive business growth.
+
+This is an opportunity to shape the future of technology products in a fast-growing startup environment where your decisions will have immediate and visible impact.`,
+        requirements: [
+          '3+ years of product management experience in tech companies',
+          'Strong understanding of product development lifecycle and agile methodologies',
+          'Proven track record of launching successful products',
+          'Excellent analytical skills with ability to use data to drive decisions',
+          'Experience with product analytics tools (Google Analytics, Mixpanel, Amplitude)',
+          'Strong communication and stakeholder management skills',
+          'Ability to write clear product requirements and user stories',
+          'Bachelor\'s degree in Business, Computer Science, or related field; MBA is a plus'
+        ],
+        benefits: [
+          'Competitive salary with performance bonuses',
+          'Health insurance coverage for you and your family',
+          'Professional development and training opportunities',
+          'Flexible work arrangements',
+          'Stock options',
+          'Modern office space in the heart of Addis Ababa',
+          'Team building events and company outings',
+          'Career growth opportunities in a rapidly expanding company'
+        ]
+      },
+      '3': {
+        title: 'DevOps Engineer',
+        company: 'CloudScale Systems',
+        location: 'Remote',
+        type: 'Full-time',
+        salary: '5,000,000 - 6,000,000 ETB',
+        description: `CloudScale Systems is looking for a skilled DevOps Engineer to join our infrastructure team. You'll be responsible for building and maintaining scalable, reliable, and secure cloud infrastructure that powers our global platform.
+
+In this role, you'll work with cutting-edge cloud technologies, implement CI/CD pipelines, monitor system performance, and ensure high availability. You'll collaborate with development teams to streamline deployment processes and improve system reliability.
+
+We're seeking someone who is passionate about automation, infrastructure as code, and building robust systems that can scale to millions of users.`,
+        requirements: [
+          '4+ years of experience in DevOps, SRE, or infrastructure roles',
+          'Strong knowledge of cloud platforms (AWS, Azure, or GCP)',
+          'Experience with containerization technologies (Docker, Kubernetes)',
+          'Proficiency in Infrastructure as Code tools (Terraform, CloudFormation, Ansible)',
+          'Strong scripting skills (Python, Bash, or Go)',
+          'Experience with CI/CD tools (Jenkins, GitLab CI, GitHub Actions)',
+          'Understanding of monitoring and logging tools (Prometheus, Grafana, ELK)',
+          'Strong problem-solving skills and ability to work under pressure'
+        ],
+        benefits: [
+          'Fully remote position with flexible hours',
+          'Competitive salary in ETB or USD',
+          'Annual performance bonuses',
+          'Home office setup allowance',
+          'Professional certification support',
+          'Health insurance',
+          'Generous vacation policy',
+          'Annual team meetups in exciting locations'
+        ]
+      },
+      '4': {
+        title: 'UX Designer',
+        company: 'DesignFirst Studio',
+        location: 'Addis Ababa, ET',
+        type: 'Full-time',
+        salary: '1,500,000 - 2,000,000 ETB',
+        description: `DesignFirst Studio is seeking a talented UX Designer to create intuitive and delightful user experiences. You'll work on a variety of projects for clients across industries, from startups to established enterprises.
+
+As a UX Designer, you'll conduct user research, create wireframes and prototypes, run usability tests, and collaborate closely with UI designers and developers to bring your designs to life. You'll be involved in every stage of the design process, from initial concept to final implementation.
+
+We're looking for someone with a strong portfolio, excellent communication skills, and a passion for solving user problems through thoughtful design.`,
+        requirements: [
+          '3+ years of UX design experience',
+          'Strong portfolio demonstrating user-centered design process',
+          'Proficiency in design tools (Figma, Sketch, Adobe XD)',
+          'Experience with user research methods and usability testing',
+          'Understanding of interaction design principles',
+          'Ability to create wireframes, prototypes, and user flows',
+          'Strong communication and presentation skills',
+          'Bachelor\'s degree in Design, HCI, or related field'
+        ],
+        benefits: [
+          'Competitive salary',
+          'Health and dental insurance',
+          'Creative and collaborative work environment',
+          'Professional development budget for courses and conferences',
+          'Flexible working hours',
+          'Modern office with latest design tools',
+          'Regular design workshops and mentorship',
+          'Opportunity to work on diverse projects'
+        ]
+      },
+      '5': {
+        title: 'Data Scientist',
+        company: 'DataDriven AI',
+        location: 'Addis Ababa, ET',
+        type: 'Full-time',
+        salary: '2,500,000 - 4,000,000 ETB',
+        description: `DataDriven AI is looking for a talented Data Scientist to join our analytics team. You'll work on challenging problems using machine learning, statistical analysis, and data visualization to derive insights that drive business decisions.
+
+In this role, you'll collaborate with product teams to identify opportunities, build predictive models, design experiments, and communicate findings to stakeholders. You'll work with large datasets and have access to cutting-edge tools and technologies.
+
+We're seeking someone who is curious, analytical, and passionate about turning data into actionable insights.`,
+        requirements: [
+          '3+ years of experience in data science or analytics',
+          'Strong programming skills in Python or R',
+          'Experience with machine learning libraries (scikit-learn, TensorFlow, PyTorch)',
+          'Proficiency in SQL and data manipulation (pandas, dplyr)',
+          'Experience with data visualization tools (Matplotlib, Plotly, Tableau)',
+          'Strong statistical knowledge and experimental design',
+          'Ability to communicate complex findings to non-technical audiences',
+          'Master\'s degree in Computer Science, Statistics, or related field preferred'
+        ],
+        benefits: [
+          'Competitive salary based on experience',
+          'Health insurance',
+          'Access to powerful computing resources and data',
+          'Conference and training budget',
+          'Flexible work schedule',
+          'Collaborative team environment',
+          'Opportunity to publish research',
+          'Career growth in AI/ML field'
+        ]
+      },
+      '6': {
+        title: 'Backend Engineer',
+        company: 'FinTech Solutions',
+        location: 'Addis Ababa, ET',
+        type: 'Full-time',
+        salary: '1,500,000 - 3,000,000 ETB',
+        description: `FinTech Solutions is seeking a skilled Backend Engineer to help build and scale our financial technology platform. You'll design and implement robust APIs, optimize database performance, and ensure the security and reliability of our systems.
+
+Working in a fast-paced fintech environment, you'll collaborate with frontend engineers, product managers, and other stakeholders to deliver features that serve thousands of users. You'll have the opportunity to work with modern technologies and solve challenging technical problems.
+
+We're looking for someone with strong coding skills, attention to detail, and a passion for building high-quality software.`,
+        requirements: [
+          '3+ years of backend development experience',
+          'Strong proficiency in at least one backend language (Python, Java, Node.js, Go)',
+          'Experience with RESTful API design and development',
+          'Knowledge of database systems (PostgreSQL, MongoDB, Redis)',
+          'Understanding of microservices architecture',
+          'Experience with cloud platforms (AWS, Azure, or GCP)',
+          'Familiarity with security best practices',
+          'Bachelor\'s degree in Computer Science or related field'
+        ],
+        benefits: [
+          'Competitive salary',
+          'Health insurance',
+          'Performance bonuses',
+          'Stock options',
+          'Professional development opportunities',
+          'Flexible working hours',
+          'Modern office environment',
+          'Team lunch and learning sessions'
+        ]
+      }
+    };
+
     // Mobile menu toggle
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
@@ -237,6 +372,75 @@ We value innovation, collaboration, and continuous learning. If you're passionat
         closeModal('applyModal');
       }
     });
+
+    // Load job details based on URL parameter
+    function loadJobDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const jobId = urlParams.get('id');
+      
+      if (!jobId || !jobs[jobId]) {
+        window.location.href = 'jobs.html';
+        return;
+      }
+
+      const job = jobs[jobId];
+
+      // Update page title
+      document.getElementById('pageTitle').textContent = `${job.title} - JRecruits`;
+      document.getElementById('jobTitle').textContent = job.title;
+      document.getElementById('modalTitle').textContent = `Apply for ${job.title}`;
+
+      // Update meta information
+      document.getElementById('jobMeta').innerHTML = `
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+          </svg>
+          ${job.company}
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          ${job.location}
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          ${job.type}
+        </span>
+        <span>
+          ${job.salary}
+        </span>
+      `;
+
+      // Update job content
+      const requirementsList = job.requirements.map(req => `<li>${req}</li>`).join('');
+      const benefitsList = job.benefits.map(benefit => `<li>${benefit}</li>`).join('');
+
+      document.getElementById('jobContent').innerHTML = `
+        <h3>Description</h3>
+        <p>${job.description}</p>
+        
+        <h3>Requirements</h3>
+        <ul>
+          ${requirementsList}
+        </ul>
+
+        <h3>Benefits</h3>
+        <ul>
+          ${benefitsList}
+        </ul>
+      `;
+    }
+
+    // Load job details when page loads
+    window.addEventListener('DOMContentLoaded', loadJobDetails);
   </script>
 </body>
 </html>
