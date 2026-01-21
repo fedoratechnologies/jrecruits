@@ -23,7 +23,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="jobs.html">Jobs</a></li>
         <li><a href="employers.html">For Employers</a></li>
-        <li><a href="#" class="btn btn-primary btn-signin">Sign In</a></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +44,7 @@
           We connect exceptional tech talent with the right companies. Our precision hiring ensures a true fit that drives performance.
         </p>
         <div class="hero-buttons animate-fade-in-up animate-delay-3">
-          <a href="employers.html" class="btn btn-primary btn-lg">Hire Talent</a>
+          <button onclick="openModal('hiringModal')" class="btn btn-primary btn-lg">Hire Talent</button>
           <a href="jobs.html" class="btn btn-outline btn-lg">Get Hired</a>
         </div>
       </div>
@@ -216,7 +215,7 @@
           <!-- Section C -->
           <div class="details-section">
             <h4>C) Skill-Transfer & International Placement</h4>
-            <p class="section-description">We facilitate the global movement of talent, both by exporting Ethiopian professionals to international markets and importing specialized foreign expertise into Ethiopia—while operating globally beyond any single country.</p>
+            <p class="section-description">We facilitate the global movement of talent, both by exporting Ethiopian professionals to international markets and importing specialized foreign expertise into Ethiopia— while operating globally beyond any single country.</p>
             <h5>Our services include:</h5>
             <ul>
               <li>International placements of Ethiopian talent on fixed-term or long-term contracts abroad</li>
@@ -224,7 +223,7 @@
               <li>Remote global placements, enabling cross-border collaboration without relocation</li>
               <li>Training-focused engagements, where international experts transfer knowledge and build local capacity when specific skills are not yet available in Ethiopia</li>
             </ul>
-            <p class="closing-statement">Through this model, we ensure immediate access to global expertise while creating long-term, sustainable skill development—connecting Ethiopia to the world and the world to Ethiopia.</p>
+            <p class="closing-statement">Through this model, we ensure immediate access to global expertise while creating long-term, sustainable skill development— connecting Ethiopia to the world and the world to Ethiopia.</p>
           </div>
         </div>
       </div>
@@ -332,7 +331,7 @@
             We are so confident in our vetting process that we offer a comprehensive replacement guarantee. 
             If a candidate doesn't work out within the first 90 days, we'll find a replacement at no extra cost.
           </p>
-          <a href="employers.html" class="btn btn-primary btn-lg">Start Hiring Risk-Free</a>
+          <button onclick="openModal('hiringModal')" class="btn btn-primary btn-lg">Start Hiring Risk-Free</button>
         </div>
         <div class="guarantee-image-wrapper">
           <img src="assets/premium_90-day_guarantee_futuristic_emblem.png" alt="90 Day Guarantee Badge">
@@ -414,6 +413,142 @@
     </div>
   </section>
 
+  <!-- Hiring Type Modal -->
+  <div class="modal-overlay" id="hiringModal" onclick="closeModalOnOverlay(event, 'hiringModal')">
+    <div class="hiring-modal">
+      <button class="modal-close-btn" onclick="closeModal('hiringModal')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <h2 class="hiring-modal-title">What are you looking to hire?</h2>
+      <div class="hiring-options">
+        <a href="employers.html" class="hiring-option-card fulltime-card">
+          <div class="hiring-option-icon fulltime-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5z"/>
+            </svg>
+            <div class="hiring-checkmark">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Full-Time / Part-Time Roles</h3>
+          <p>Hire for permanent positions</p>
+        </a>
+        <span class="hiring-or">OR</span>
+        <a href="#" onclick="openContractModal(event)" class="hiring-option-card contract-card">
+          <div class="hiring-option-icon contract-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 3H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H4V5h16v10z"/>
+              <path d="M6 8h8v2H6zM6 11h12v2H6z"/>
+            </svg>
+            <div class="hiring-clock">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="0">
+                <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                <polyline points="12 6 12 12 16 14" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Contractual Projects / Freelancers</h3>
+          <p>Hire for short-term projects</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Contract Inquiry Modal -->
+  <div class="modal-overlay" id="contractModal" onclick="closeModalOnOverlay(event, 'contractModal')">
+    <div class="modal contract-modal">
+      <button class="modal-close-btn" onclick="closeModal('contractModal')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <div class="modal-header contract-modal-header">
+        <div class="contract-modal-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h2>Contract Project Inquiry</h2>
+        <p>Tell us about your project needs and we'll connect you with the right talent.</p>
+      </div>
+      <div class="modal-body">
+        <form id="contractForm" onsubmit="submitContractInquiry(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contractCompanyName">Company Name</label>
+              <input type="text" id="contractCompanyName" name="companyName" class="form-input" placeholder="Acme Inc." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contractContactName">Contact Name</label>
+              <input type="text" id="contractContactName" name="contactName" class="form-input" placeholder="John Doe" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contractPosition">Your Position at the Company</label>
+              <input type="text" id="contractPosition" name="position" class="form-input" placeholder="e.g., HR Manager, CTO, Hiring Manager">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contractEmail">Email</label>
+              <input type="email" id="contractEmail" name="email" class="form-input" placeholder="hiring@acme.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contractRoles">Role(s) Contracting For</label>
+              <input type="text" id="contractRoles" name="roles" class="form-input" placeholder="e.g., Contract Backend Engineer, IT Consultant">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="engagementType">Engagement Type</label>
+              <input type="text" id="engagementType" name="engagementType" class="form-input" placeholder="e.g., Full-Time Contract, Part-Time Contract, Project-Based">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contractDuration">Contract Duration</label>
+              <input type="text" id="contractDuration" name="duration" class="form-input" placeholder="e.g., 3 months, 6 months, 12 months">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rateRange">Rate Range (USD or ETB)</label>
+              <input type="text" id="rateRange" name="rateRange" class="form-input" placeholder="e.g., $60–$90/hour or 250,000–400,000 ETB/month">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="weeklyHours">Expected Weekly Hours</label>
+              <input type="text" id="weeklyHours" name="weeklyHours" class="form-input" placeholder="e.g., 20 hrs/week, 40 hrs/week">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="workLocation">Work Location</label>
+              <input type="text" id="workLocation" name="workLocation" class="form-input" placeholder="City, Country">
+            </div>
+          </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Brief Description</label>
+              <input type="text" id="message" name="message-textarea" class="form-input" placeholder="Tell us about the roles you're looking to fill...">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-contract-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+            </svg>
+            Submit Contract Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -428,10 +563,10 @@
         <div>
           <h4>Company</h4>
           <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html#about">Who We Are</a></li>
+            <li><a href="index.html#why">Why JRecruits</a></li>
+            <li><a href="index.html#services">What We Do</a></li>
+            <li><a href="index.html#process">How It Works</a></li>
           </ul>
         </div>
         <div>
@@ -439,17 +574,15 @@
           <ul class="footer-links">
             <li><a href="employers.html">For Employers</a></li>
             <li><a href="jobs.html">For Candidates</a></li>
-            <li><a href="#">Executive Search</a></li>
-            <li><a href="#">Tech Recruiting</a></li>
+            <li><a href="#" onclick="openModal('contractModal'); return false;">Contractual Projects / Freelancers</a></li>
           </ul>
         </div>
         <div>
           <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Salary Guide</a></li>
-            <li><a href="#">Interview Tips</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="mailto:info@jrecruits.com">info@jrecruits.com</a></li>
+            <li><a href="mailto:careers@jrecruits.com">careers@jrecruits.com</a></li>
+            <li><a href="tel:+251999274948">+251 999 274 948</a></li>
           </ul>
         </div>
       </div>
@@ -497,6 +630,53 @@
       
       panel.classList.toggle('active');
       card.classList.toggle('expanded');
+    }
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(event, modalId) {
+      if (event.target.classList.contains('modal-overlay')) {
+        closeModal(modalId);
+      }
+    }
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal('hiringModal');
+        closeModal('contractModal');
+      }
+    });
+
+    // Open contract modal from hiring modal
+    function openContractModal(event) {
+      event.preventDefault();
+      closeModal('hiringModal');
+      setTimeout(function() {
+        openModal('contractModal');
+      }, 300);
+    }
+
+    // Submit contract inquiry
+    function submitContractInquiry(event) {
+      event.preventDefault();
+      alert('Contract inquiry submitted successfully! Our team will reach out within 24-48 hours to discuss your project requirements.');
+      closeModal('contractModal');
+      document.getElementById('contractForm').reset();
+    }
+
+    // Check URL hash on page load to open contract modal
+    if (window.location.hash === '#contractModal') {
+      openModal('contractModal');
     }
 
     // Add scroll animations
