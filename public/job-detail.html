@@ -22,7 +22,6 @@
       <ul class="navbar-nav" id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="employers.html">For Employers</a></li>
       </ul>
     </div>
   </nav>
@@ -118,9 +117,9 @@
         <div>
           <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="employers.html">For Employers</a></li>
             <li><a href="jobs.html">For Candidates</a></li>
-            <li><a href="index.html#contractModal">Contractual Projects / Freelancers</a></li>
+            <li><a href="index.html#hiringModal" onclick="window.location.href='index.html#hiringModal'; return false;">For Employers</a></li>
+            <li><a href="index.html#contractModal" onclick="window.location.href='index.html#contractModal'; return false;">Contractual Projects / Freelancers</a></li>
           </ul>
         </div>
         <div>
@@ -147,7 +146,7 @@
         location: 'Addis Ababa, ET',
         type: 'Full-time',
         salary: '3,000,000 - 4,000,000 ETB',
-        description: `We are looking for an experienced Senior Frontend Engineer to join our growing team at TechCorp Inc. You will be responsible for building and maintaining high-quality web applications that serve millions of users worldwide.
+        description: `We are looking for an experienced Senior Frontend Engineer to join our growing team. You will be responsible for building and maintaining high-quality web applications that serve millions of users worldwide.
 
 As a key member of our engineering team, you'll work closely with designers, product managers, and backend engineers to deliver exceptional user experiences. You'll have the opportunity to influence technical decisions and mentor junior developers.
 
@@ -179,7 +178,7 @@ We value innovation, collaboration, and continuous learning. If you're passionat
         location: 'Addis Ababa, ET',
         type: 'Full-time',
         salary: '2,000,000 - 3,000,000 ETB',
-        description: `We are seeking a strategic and user-focused Product Manager to join Innovate Labs. In this role, you'll drive product vision and execution for innovative solutions that impact thousands of users across Ethiopia and beyond.
+        description: `We are seeking a strategic and user-focused Product Manager. In this role, you'll drive product vision and execution for innovative solutions that impact thousands of users across Ethiopia and beyond.
 
 As a Product Manager, you'll work at the intersection of business, technology, and user experience. You'll collaborate with cross-functional teams including engineering, design, marketing, and sales to deliver products that solve real problems and drive business growth.
 
@@ -211,7 +210,7 @@ This is an opportunity to shape the future of technology products in a fast-grow
         location: 'Remote',
         type: 'Full-time',
         salary: '5,000,000 - 6,000,000 ETB',
-        description: `CloudScale Systems is looking for a skilled DevOps Engineer to join our infrastructure team. You'll be responsible for building and maintaining scalable, reliable, and secure cloud infrastructure that powers our global platform.
+        description: `We are looking for a skilled DevOps Engineer to join our infrastructure team. You'll be responsible for building and maintaining scalable, reliable, and secure cloud infrastructure that powers our global platform.
 
 In this role, you'll work with cutting-edge cloud technologies, implement CI/CD pipelines, monitor system performance, and ensure high availability. You'll collaborate with development teams to streamline deployment processes and improve system reliability.
 
@@ -243,7 +242,7 @@ We're seeking someone who is passionate about automation, infrastructure as code
         location: 'Addis Ababa, ET',
         type: 'Full-time',
         salary: '1,500,000 - 2,000,000 ETB',
-        description: `DesignFirst Studio is seeking a talented UX Designer to create intuitive and delightful user experiences. You'll work on a variety of projects for clients across industries, from startups to established enterprises.
+        description: `We are seeking a talented UX Designer to create intuitive and delightful user experiences. You'll work on a variety of projects for clients across industries, from startups to established enterprises.
 
 As a UX Designer, you'll conduct user research, create wireframes and prototypes, run usability tests, and collaborate closely with UI designers and developers to bring your designs to life. You'll be involved in every stage of the design process, from initial concept to final implementation.
 
@@ -270,35 +269,37 @@ We're looking for someone with a strong portfolio, excellent communication skill
         ]
       },
       '5': {
-        title: 'Data Scientist',
-        company: 'DataDriven AI',
+        title: 'Cybersecurity Analyst',
+        company: 'Summit Technologies',
         location: 'Addis Ababa, ET',
         type: 'Full-time',
-        salary: '2,500,000 - 4,000,000 ETB',
-        description: `DataDriven AI is looking for a talented Data Scientist to join our analytics team. You'll work on challenging problems using machine learning, statistical analysis, and data visualization to derive insights that drive business decisions.
+        salary: 'Competitive',
+        description: `We’re hiring a Cybersecurity Analyst to support the security. You’ll help protect our systems, users, and data by monitoring security activity, investigating alerts, and working with internal teams to reduce risk across endpoints, networks, and cloud services.
 
-In this role, you'll collaborate with product teams to identify opportunities, build predictive models, design experiments, and communicate findings to stakeholders. You'll work with large datasets and have access to cutting-edge tools and technologies.
+In this role, you’ll collaborate with engineering, IT, and business stakeholders to improve detection and response, support vulnerability remediation, and strengthen security controls. Your work will directly contribute to keeping operations secure and resilient.
 
-We're seeking someone who is curious, analytical, and passionate about turning data into actionable insights.`,
+This is a strong opportunity for someone who enjoys hands-on security work and wants to grow in a fast-moving environment with real ownership and visible impact.`,
         requirements: [
-          '3+ years of experience in data science or analytics',
-          'Strong programming skills in Python or R',
-          'Experience with machine learning libraries (scikit-learn, TensorFlow, PyTorch)',
-          'Proficiency in SQL and data manipulation (pandas, dplyr)',
-          'Experience with data visualization tools (Matplotlib, Plotly, Tableau)',
-          'Strong statistical knowledge and experimental design',
-          'Ability to communicate complex findings to non-technical audiences',
-          'Master\'s degree in Computer Science, Statistics, or related field preferred'
+          '2–3 years of experience in a cybersecurity, SOC, or IT security role',
+          'Solid understanding of core security concepts (networking, identity, access controls, encryption, logging)',
+          'Experience with security monitoring and alert triage using tools like SIEM and/or EDR/XDR (e.g., Splunk, Sentinel, Microsoft Defender, CrowdStrike)',
+          'Familiarity with incident response workflows: investigation, containment, documentation, and follow-up actions',
+          'Experience supporting vulnerability management (scanning, prioritization, coordinating fixes)',
+          'Comfortable writing clear findings, tickets, and simple runbooks/SOPs',
+          'Strong communication skills and ability to work cross-functionally',
+          'Basic scripting (PowerShell, Python, or Bash) for automation or analysis is a plus',
+          'Bachelor’s degree in a related field or equivalent practical experience',
+          'Certifications are a plus (Security+, CySA+, SSCP, AZ-500, or similar)'
         ],
         benefits: [
-          'Competitive salary based on experience',
-          'Health insurance',
-          'Access to powerful computing resources and data',
-          'Conference and training budget',
-          'Flexible work schedule',
-          'Collaborative team environment',
-          'Opportunity to publish research',
-          'Career growth in AI/ML field'
+          'Competitive salary with performance-based incentives',
+          'Comprehensive health insurance for you and your family',
+          'Professional development support (training budget and certification assistance)',
+          'Flexible work arrangements (remote/hybrid depending on team needs)',
+          'Paid time off and company holidays',
+          'Modern security tooling and hands-on growth opportunities',
+          'Team events and a collaborative culture',
+          'Clear pathways for advancement (incident response, cloud security, security engineering, GRC)'
         ]
       },
       '6': {
@@ -307,7 +308,7 @@ We're seeking someone who is curious, analytical, and passionate about turning d
         location: 'Addis Ababa, ET',
         type: 'Full-time',
         salary: '1,500,000 - 3,000,000 ETB',
-        description: `FinTech Solutions is seeking a skilled Backend Engineer to help build and scale our financial technology platform. You'll design and implement robust APIs, optimize database performance, and ensure the security and reliability of our systems.
+        description: `We are seeking a skilled Backend Engineer to help build and scale our financial technology platform. You'll design and implement robust APIs, optimize database performance, and ensure the security and reliability of our systems.
 
 Working in a fast-paced fintech environment, you'll collaborate with frontend engineers, product managers, and other stakeholders to deliver features that serve thousands of users. You'll have the opportunity to work with modern technologies and solve challenging technical problems.
 
@@ -394,28 +395,10 @@ We're looking for someone with strong coding skills, attention to detail, and a 
       document.getElementById('jobMeta').innerHTML = `
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
-            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
-          </svg>
-          ${job.company}
-        </span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          ${job.location}
-        </span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
           ${job.type}
-        </span>
-        <span>
-          ${job.salary}
         </span>
       `;
 

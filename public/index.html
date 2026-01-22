@@ -22,7 +22,6 @@
       <ul class="navbar-nav" id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="employers.html">For Employers</a></li>
       </ul>
     </div>
   </nav>
@@ -36,8 +35,8 @@
       <div class="hero-content">
         <p class="hero-tagline animate-fade-in-up">Hire Higher</p>
         <h1 class="animate-fade-in-up animate-delay-1">
-          The Right Talent.<br>
-          The First Time.<br>
+          The Right Talent.<br class="mobile-break">
+          The First Time.<br class="mobile-break">
           Every Time.
         </h1>
         <p class="hero-subtitle animate-fade-in-up animate-delay-2">
@@ -369,6 +368,21 @@
     </div>
   </section>
 
+  <!-- Trusted By Section -->
+  <section class="section section-white" id="trusted-by">
+    <div class="container">
+      <div class="section-header">
+        <h2>Trusted By</h2>
+      </div>
+      <div class="trusted-grid" style="display: flex; justify-content: center; text-align: center;">
+        <div class="trusted-item">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Fedora Technologies and Diamond Technologies Incorporated</h3>
+          <p style="color: var(--slate-400); font-style: italic;">"Reduced time-to-hire by 30% for Fedora Technologies and Diamond Technologies Incorporated"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section class="section section-dark" id="contact">
     <div class="section-grid-bg"></div>
@@ -424,7 +438,7 @@
       </button>
       <h2 class="hiring-modal-title">What are you looking to hire?</h2>
       <div class="hiring-options">
-        <a href="employers.html" class="hiring-option-card fulltime-card">
+        <a href="#" onclick="openFullTimeModal(event)" class="hiring-option-card fulltime-card">
           <div class="hiring-option-icon fulltime-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5z"/>
@@ -439,13 +453,13 @@
           <p>Hire for permanent positions</p>
         </a>
         <span class="hiring-or">OR</span>
-        <a href="#" onclick="openContractModal(event)" class="hiring-option-card contract-card">
-          <div class="hiring-option-icon contract-icon">
+        <a href="#" onclick="openContractModal(event)" class="hiring-option-card fulltime-card">
+          <div class="hiring-option-icon fulltime-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 3H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H4V5h16v10z"/>
               <path d="M6 8h8v2H6zM6 11h12v2H6z"/>
             </svg>
-            <div class="hiring-clock">
+            <div class="hiring-checkmark">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="0">
                 <circle cx="12" cy="12" r="10" fill="currentColor"/>
                 <polyline points="12 6 12 12 16 14" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -549,6 +563,67 @@
     </div>
   </div>
 
+  <!-- Full-Time/Part-Time Inquiry Modal -->
+  <div class="modal-overlay" id="fullTimeModal" onclick="closeModalOnOverlay(event, 'fullTimeModal')">
+    <div class="modal contract-modal">
+      <button class="modal-close-btn" onclick="closeModal('fullTimeModal')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <div class="modal-header contract-modal-header">
+        <div class="contract-modal-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h2>Hire Full-Time/Part-Time</h2>
+        <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
+      </div>
+      <div class="modal-body">
+        <form id="fullTimeForm" onsubmit="submitFullTimeInquiry(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ftCompanyName">Company Name</label>
+              <input type="text" id="ftCompanyName" name="companyName" class="form-input" placeholder="Acme Inc." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ftContactName">Contact Name</label>
+              <input type="text" id="ftContactName" name="contactName" class="form-input" placeholder="John Doe" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ftEmail">Email Address</label>
+              <input type="email" id="ftEmail" name="email" class="form-input" placeholder="john@company.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ftRoleType">Role Type</label>
+              <select id="ftRoleType" name="roleType" class="form-input" style="background: var(--input); color: white;">
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ftDescription">Role Description & Requirements</label>
+            <textarea id="ftDescription" name="roleDescription" class="form-textarea" placeholder="Tell us about the position, required skills, and experience level..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; height: 3.5rem; font-size: 1.125rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            Submit Hiring Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -572,8 +647,8 @@
         <div>
           <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="employers.html">For Employers</a></li>
             <li><a href="jobs.html">For Candidates</a></li>
+            <li><a href="#" onclick="openModal('hiringModal'); return false;">For Employers</a></li>
             <li><a href="#" onclick="openModal('contractModal'); return false;">Contractual Projects / Freelancers</a></li>
           </ul>
         </div>
@@ -654,6 +729,7 @@ document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeModal('hiringModal');
         closeModal('contractModal');
+        closeModal('fullTimeModal');
       }
     });
 
@@ -664,6 +740,21 @@ document.addEventListener('keydown', function(e) {
       setTimeout(function() {
         openModal('contractModal');
       }, 300);
+    }
+
+    function openFullTimeModal(event) {
+      if (event) event.preventDefault();
+      closeModal('hiringModal');
+      setTimeout(function() {
+        openModal('fullTimeModal');
+      }, 300);
+    }
+
+    function submitFullTimeInquiry(event) {
+      event.preventDefault();
+      alert('Hiring request submitted successfully! Our team will review your requirements and get back to you soon.');
+      closeModal('fullTimeModal');
+      document.getElementById('fullTimeForm').reset();
     }
 
     // Submit contract inquiry
