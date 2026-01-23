@@ -495,7 +495,8 @@
         <p>Tell us about your project needs and we'll connect you with the right talent.</p>
       </div>
       <div class="modal-body">
-        <form id="contractForm" onsubmit="submitContractInquiry(event)">
+        <form id="contractForm" action="https://submit-form.com/z6W0WdCa4" method="POST">
+          <input type="hidden" name="_redirect" value="https://jrecruits.com/thanks.html" />
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="contractCompanyName">Company Name</label>
@@ -583,7 +584,8 @@
         <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
       </div>
       <div class="modal-body">
-        <form id="fullTimeForm" onsubmit="submitFullTimeInquiry(event)">
+        <form id="fullTimeForm" action="https://submit-form.com/GFMlEZkHU" method="POST">
+          <input type="hidden" name="_redirect" value="https://jrecruits.com/thanks.html" />
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="ftCompanyName">Company Name</label>
@@ -594,10 +596,24 @@
               <input type="text" id="ftContactName" name="contactName" class="form-input" placeholder="John Doe" required>
             </div>
           </div>
+          <div class="form-group">
+            <label class="form-label" for="ftEmail">Email Address</label>
+            <input type="email" id="ftEmail" name="email" class="form-input" placeholder="john@company.com" required>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="ftEmail">Email Address</label>
-              <input type="email" id="ftEmail" name="email" class="form-input" placeholder="john@company.com" required>
+              <label class="form-label" for="ftPosition">Position Hiring For</label>
+              <input type="text" id="ftPosition" name="position" class="form-input" placeholder="e.g. Senior Backend Engineer" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ftLocation">Location</label>
+              <input type="text" id="ftLocation" name="location" class="form-input" placeholder="e.g. Addis Ababa, Remote" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ftSalary">Salary Range</label>
+              <input type="text" id="ftSalary" name="salaryRange" class="form-input" placeholder="e.g. $2k - $4k / month" required>
             </div>
             <div class="form-group">
               <label class="form-label" for="ftRoleType">Role Type</label>
