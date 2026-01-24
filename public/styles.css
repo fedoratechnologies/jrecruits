@@ -1817,34 +1817,46 @@ img {
 }
 
 /* ===== Trust Section ===== */
-.trust-section {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background: var(--slate-50);
-  border-radius: 1rem;
-  border: 1px solid var(--slate-100);
-}
-
-.trust-section h4 {
-  font-weight: 700;
-  color: var(--slate-900);
-  margin-bottom: 1rem;
-}
-
-.trust-logos {
+/* Trusted By Section - Logo Styling */
+.trusted-logos-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
   align-items: center;
-  opacity: 0.6;
+  padding: 2rem 0;
+  margin: 2rem 0;
 }
 
-.trust-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  color: var(--slate-400);
+.trusted-logos-image {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trusted-logos-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive sizing */
+@media (max-width: 1024px) {
+  .trusted-logos-image {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trusted-logos-image {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trusted-logos-image {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 }
 
 /* ===== Modal / Dialog ===== */
