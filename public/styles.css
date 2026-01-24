@@ -1833,13 +1833,15 @@ img {
   justify-content: center;
   align-items: center;
   background: #0a1628;
+  height: 350px; /* Adjust this to your preference */
+  overflow: hidden;
 }
 
 .trusted-by-banner-image {
   width: 100%;
-  max-width: 100%;
-  height: 350px; /* Changed from 'auto' to fixed height */
+  height: 100%;
   display: block;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -1849,13 +1851,13 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .trusted-by-banner-image {
+  .trusted-by-banner-wrapper {
     height: 280px;
   }
 }
 
 @media (max-width: 768px) {
-  .trusted-by-banner-image {
+  .trusted-by-banner-wrapper {
     height: 220px;
   }
 }
