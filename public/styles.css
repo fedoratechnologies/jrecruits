@@ -726,7 +726,7 @@ img {
 }
 
 .employer-details-panel.active {
-  max-height: 2000px;
+  max-height: 5000px;
   opacity: 1;
   margin-top: 2rem;
 }
@@ -915,7 +915,7 @@ img {
 }
 
 .candidate-details-panel.active {
-  max-height: 1000px;
+  max-height: 3000px;
   opacity: 1;
   margin-top: 2rem;
 }
