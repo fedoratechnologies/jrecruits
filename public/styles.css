@@ -475,6 +475,12 @@ img {
     linear-gradient(90deg, rgba(20, 184, 166, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
+  z-index: 0;
+}
+
+.section-dark .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-blob {
