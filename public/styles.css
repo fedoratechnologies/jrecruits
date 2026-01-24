@@ -1838,7 +1838,7 @@ img {
 .trusted-by-banner-image {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 350px; /* Changed from 'auto' to fixed height */
   display: block;
   transition: transform 0.5s ease;
 }
@@ -1850,13 +1850,13 @@ img {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .trusted-by-banner-image {
-    min-height: 400px;
+    height: 280px;
   }
 }
 
 @media (max-width: 768px) {
   .trusted-by-banner-image {
-    min-height: 350px;
+    height: 220px;
   }
 }
 ```
