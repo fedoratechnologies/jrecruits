@@ -1816,48 +1816,60 @@ img {
   color: var(--slate-600);
 }
 
-/* ===== Trust Section ===== */
-/* Trusted By Section - Logo Styling */
-.trusted-logos-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-  margin: 2rem 0;
+/* ===== Trusted By Section - Full Image Banner ===== */
+.section-trusted-by {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #0a1628;
 }
 
-.trusted-logos-image {
-  max-width: 900px;
+.trusted-by-full-image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
 
-.trusted-logos-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+/* Optional: Add subtle hover effect */
+.trusted-by-full-image:hover {
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
 }
 
-/* Responsive sizing */
-@media (max-width: 1024px) {
-  .trusted-logos-image {
-    max-width: 700px;
-  }
-}
-
+/* Responsive: Ensure image looks good on all devices */
 @media (max-width: 768px) {
-  .trusted-logos-image {
-    max-width: 500px;
+  .trusted-by-full-image {
+    min-height: 400px;
+    object-fit: cover;
   }
 }
+```
 
-@media (max-width: 480px) {
-  .trusted-logos-image {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-}
+---
+
+## ✅ COMPLETE CHECKLIST
+
+- [ ] **Save your image** as `trusted-by-banner.png` in the `assets/` folder
+- [ ] **Replace the HTML** - Use the 3-line code above
+- [ ] **Delete old CSS** - Remove any old "Trusted By" styles
+- [ ] **Add new CSS** - Paste the code above to bottom of `styles.css`
+- [ ] **Test** - Refresh your browser and check!
+
+---
+
+## 📋 FILE STRUCTURE
+
+Make sure your files are organized like this:
+```
+your-project/
+├── index.html
+├── styles.css
+└── assets/
+    └── trusted-by-banner.png  ← Your custom image here
 
 /* ===== Modal / Dialog ===== */
 .modal-overlay {
