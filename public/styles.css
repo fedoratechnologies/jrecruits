@@ -3,32 +3,32 @@
 /* ===== CSS Variables ===== */
 :root {
   /* Dark Tech Palette */
-  --background: hsl(222, 47%, 6%);
-  --background-secondary: hsl(222, 40%, 8%);
-  --foreground: hsl(210, 40%, 98%);
+  --background: #0b1023;
+  --background-secondary: #101b33;
+  --foreground: #f4f6ff;
 
-  --card: hsl(222, 40%, 10%);
-  --card-foreground: hsl(210, 40%, 98%);
+  --card: #111d38;
+  --card-foreground: #f4f6ff;
 
-  /* Primary - Electric Cyan */
-  --primary: hsl(190, 95%, 50%);
-  --primary-glow: hsla(190, 95%, 50%, 0.3);
-  --primary-foreground: hsl(222, 47%, 6%);
+  /* Primary - JRecruits Violet */
+  --primary: #6f6bff;
+  --primary-glow: rgba(111, 107, 255, 0.35);
+  --primary-foreground: #0b1023;
 
-  /* Secondary - Deep Purple */
-  --secondary: hsl(262, 83%, 58%);
-  --secondary-glow: hsla(262, 83%, 58%, 0.3);
+  /* Secondary - Soft Indigo */
+  --secondary: #7f8cff;
+  --secondary-glow: rgba(127, 140, 255, 0.3);
 
-  /* Accent - Magenta */
-  --accent: hsl(330, 85%, 60%);
-  --accent-glow: hsla(330, 85%, 60%, 0.3);
+  /* Accent - Cool Blue */
+  --accent: #53c3ff;
+  --accent-glow: rgba(83, 195, 255, 0.3);
 
-  --muted: hsl(222, 30%, 15%);
-  --muted-foreground: hsl(215, 20%, 55%);
+  --muted: #16233f;
+  --muted-foreground: #9aa4bd;
 
-  --border: hsl(222, 30%, 18%);
-  --input: hsl(222, 30%, 15%);
-  --ring: hsl(190, 95%, 50%);
+  --border: #1c2a4a;
+  --input: #142341;
+  --ring: #6f6bff;
 
   --radius: 0.75rem;
 
@@ -118,7 +118,7 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 15, 28, 0.85);
+  background: rgba(11, 16, 35, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;
@@ -296,14 +296,14 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), hsl(200, 95%, 45%));
+  background: linear-gradient(135deg, var(--primary), #7c7bff);
   color: var(--primary-foreground);
-  box-shadow: 0 0 30px var(--primary-glow), 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 24px var(--primary-glow), 0 4px 16px rgba(5, 8, 20, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px var(--primary-glow), 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 40px var(--primary-glow), 0 10px 28px rgba(5, 8, 20, 0.55);
 }
 
 .btn-outline {
@@ -339,8 +339,8 @@ img {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(111, 107, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 107, 255, 0.08) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
 }
@@ -449,12 +449,12 @@ img {
 }
 
 .section-white {
-  background-color: var(--slate-50);
-  color: var(--slate-900);
+  background-color: var(--background-secondary);
+  color: var(--foreground);
 }
 
 .section-white .section-header h2 {
-  color: var(--slate-900);
+  color: var(--foreground);
 }
 
 .section-slate {
@@ -471,8 +471,8 @@ img {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(20, 184, 166, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 184, 166, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(111, 107, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 107, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -623,8 +623,8 @@ img {
 }
 
 .service-card {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -644,15 +644,8 @@ img {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.employers-card:hover {
-  border-color: var(--primary);
-}
-
-.candidates-card:hover {
-  border-color: var(--secondary);
+  box-shadow: 0 20px 40px rgba(5, 8, 20, 0.5);
+  border-color: rgba(111, 107, 255, 0.35);
 }
 
 .service-icon {
@@ -663,7 +656,7 @@ img {
 }
 
 .employers-card .service-icon {
-  color: hsl(190, 80%, 40%);
+  color: var(--primary);
 }
 
 .candidates-card .service-icon {
@@ -680,13 +673,13 @@ img {
 
 .service-card h3 {
   font-size: 1.5rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 1rem;
 }
 
 .service-card p {
   font-size: 1rem;
-  color: var(--slate-600);
+  color: var(--muted-foreground);
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -701,7 +694,7 @@ img {
 }
 
 .employers-card .service-link {
-  color: hsl(190, 80%, 40%);
+  color: var(--primary);
 }
 
 .candidates-card .service-link {
@@ -1405,7 +1398,7 @@ img {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--slate-700);
+  color: var(--muted-foreground);
   margin-bottom: 0.5rem;
 }
 
@@ -1415,23 +1408,23 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 1rem;
-  background-color: var(--slate-50);
-  border: 1px solid var(--slate-200);
+  background-color: var(--background);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  color: var(--slate-900);
+  color: var(--foreground);
 }
 
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.2);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--slate-400);
+  color: var(--muted-foreground);
 }
 
 .form-textarea {
@@ -1441,16 +1434,16 @@ img {
 
 /* ===== Cards ===== */
 .card {
-  background: var(--white);
+  background: var(--card);
   border-radius: 1rem;
-  border: 1px solid var(--slate-100);
+  border: 1px solid var(--border);
   overflow: hidden;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-  border-color: rgba(20, 184, 166, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(5, 8, 20, 0.55);
+  border-color: rgba(111, 107, 255, 0.35);
 }
 
 .card-body {
@@ -1555,7 +1548,7 @@ img {
 
 .search-box input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.2);
   outline: none;
 }
 
@@ -1587,8 +1580,8 @@ img {
 }
 
 .job-card:hover {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-  border-color: rgba(20, 184, 166, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(5, 8, 20, 0.6);
+  border-color: rgba(111, 107, 255, 0.35);
 }
 
 .job-card h3 {
@@ -1752,16 +1745,16 @@ img {
 
 /* ===== Form Panel (Employers Page) ===== */
 .form-panel {
-  background: var(--white);
+  background: var(--card);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--slate-100);
+  box-shadow: 0 25px 50px -12px rgba(5, 8, 20, 0.55);
+  border: 1px solid var(--border);
 }
 
 .form-panel h3 {
   font-size: 1.5rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 1.5rem;
 }
 
@@ -1800,33 +1793,33 @@ img {
 }
 
 .benefit-icon.blue {
-  background: var(--blue-100);
-  color: hsl(190, 80%, 40%);
+  background: rgba(111, 107, 255, 0.18);
+  color: var(--primary);
 }
 
 .benefit-icon.purple {
-  background: var(--purple-100);
-  color: var(--purple-600);
+  background: rgba(127, 140, 255, 0.18);
+  color: var(--secondary);
 }
 
 .benefit-icon.teal {
-  background: var(--teal-100);
-  color: var(--teal-600);
+  background: rgba(83, 195, 255, 0.18);
+  color: var(--accent);
 }
 
 .benefit-item h3 {
   font-size: 1.25rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 0.5rem;
 }
 
 .benefit-item p {
-  color: var(--slate-600);
+  color: var(--muted-foreground);
 }
 
 /* ===== Trusted By Section ===== */
 .section-trusted-by {
-  background: var(--background);
+  background: var(--background-secondary);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 3rem 0;
@@ -1849,20 +1842,21 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+}
+
+.trusted-by-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
 }
 
 .trusted-by-logos img {
-  max-height: 48px;
+  max-height: 46px;
   width: auto;
-  opacity: 0.75;
-  filter: grayscale(100%);
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-.trusted-by-logos img:hover {
   opacity: 1;
-  filter: grayscale(0%);
+  filter: none;
 }
 
 @media (max-width: 600px) {
@@ -1901,14 +1895,14 @@ img {
 }
 
 .modal {
-  background: var(--white);
+  background: var(--card);
   border-radius: 1rem;
   max-width: 500px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  border: 1px solid var(--slate-200);
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(5, 8, 20, 0.6);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1919,37 +1913,37 @@ img {
 
 .modal-header {
   padding: 1.5rem;
-  border-bottom: 1px solid var(--slate-200);
-  background: var(--slate-50);
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
   border-radius: 1rem 1rem 0 0;
 }
 
 .modal-header h2 {
   font-size: 1.5rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 0.25rem;
 }
 
 .modal-header p {
-  color: var(--slate-600);
+  color: var(--muted-foreground);
   font-size: 0.875rem;
 }
 
 .modal-body {
   padding: 1.5rem;
-  background: var(--white);
+  background: var(--card);
 }
 
 /* ===== Hiring Type Modal ===== */
 .hiring-modal {
-  background: var(--white);
+  background: var(--card);
   border-radius: 1.5rem;
   max-width: 720px;
   width: 100%;
   padding: 2.5rem;
   position: relative;
-  border: 1px solid var(--slate-200);
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(5, 8, 20, 0.6);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1962,10 +1956,10 @@ img {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--slate-100);
-  border: 1px solid var(--slate-200);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   cursor: pointer;
-  color: var(--slate-500);
+  color: var(--muted-foreground);
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -1975,13 +1969,13 @@ img {
 }
 
 .modal-close-btn:hover {
-  background: var(--slate-200);
-  color: var(--slate-900);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--foreground);
 }
 
 .hiring-modal-title {
   font-size: 2rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   text-align: center;
   margin-bottom: 2.5rem;
   font-weight: 700;
@@ -1996,11 +1990,11 @@ img {
 }
 
 .hiring-option-card {
-  background: var(--white);
+  background: var(--background);
   border-radius: 1rem;
   padding: 2rem 1.5rem;
   text-align: center;
-  border: 3px solid transparent;
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
   cursor: pointer;
   flex: 1;
@@ -2015,21 +2009,21 @@ img {
 }
 
 .fulltime-card {
-  border-color: #2563eb;
+  border-color: rgba(111, 107, 255, 0.45);
 }
 
 .fulltime-card:hover {
-  border-color: #1d4ed8;
-  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(111, 107, 255, 0.25);
 }
 
 .contract-card {
-  border-color: #f97316;
+  border-color: rgba(83, 195, 255, 0.45);
 }
 
 .contract-card:hover {
-  border-color: #ea580c;
-  box-shadow: 0 15px 30px rgba(249, 115, 22, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 15px 30px rgba(83, 195, 255, 0.25);
 }
 
 .hiring-option-icon {
@@ -2041,11 +2035,11 @@ img {
 }
 
 .fulltime-icon {
-  color: #2563eb;
+  color: var(--primary);
 }
 
 .contract-icon {
-  color: #64748b;
+  color: var(--accent);
 }
 
 .hiring-checkmark {
@@ -2054,7 +2048,7 @@ img {
   right: calc(50% - 45px);
   width: 28px;
   height: 28px;
-  background: #2563eb;
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2075,7 +2069,7 @@ img {
 
 .hiring-option-card h3 {
   font-size: 1.125rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 0.5rem;
   font-weight: 700;
   line-height: 1.3;
@@ -2083,9 +2077,9 @@ img {
 
 .hiring-option-card p {
   font-size: 0.9375rem;
-  color: var(--slate-500);
+  color: var(--muted-foreground);
   margin: 0;
-  border-top: 1px solid var(--slate-200);
+  border-top: 1px solid var(--border);
   padding-top: 0.75rem;
   margin-top: 0.5rem;
 }
@@ -2093,7 +2087,7 @@ img {
 .hiring-or {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--slate-400);
+  color: var(--muted-foreground);
   text-transform: uppercase;
 }
 
@@ -2123,7 +2117,7 @@ img {
 
 /* ===== File Upload ===== */
 .file-upload {
-  border: 2px dashed var(--slate-200);
+  border: 2px dashed var(--border);
   border-radius: 0.5rem;
   padding: 1.5rem;
   text-align: center;
@@ -2137,20 +2131,20 @@ img {
 }
 
 .file-upload svg {
-  color: var(--slate-400);
+  color: var(--muted-foreground);
   margin-bottom: 0.5rem;
 }
 
 .file-upload p {
   font-size: 0.875rem;
-  color: var(--slate-600);
+  color: var(--muted-foreground);
   font-weight: 500;
   margin: 0;
 }
 
 .file-upload span {
   font-size: 0.75rem;
-  color: var(--slate-400);
+  color: var(--muted-foreground);
 }
 
 /* ===== Spinner ===== */
@@ -2261,8 +2255,8 @@ img {
 }
 
 .feature-card:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-  border-color: rgba(20, 184, 166, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(5, 8, 20, 0.6);
+  border-color: rgba(111, 107, 255, 0.35);
 }
 
 .feature-card-icon {
@@ -2281,7 +2275,7 @@ img {
 }
 
 .feature-card-icon.blue {
-  background: rgba(20, 184, 166, 0.1);
+  background: rgba(111, 107, 255, 0.15);
   color: var(--primary);
 }
 
@@ -2428,7 +2422,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(20, 184, 166, 0.2);
+  background: rgba(111, 107, 255, 0.2);
   filter: blur(32px);
   border-radius: 50%;
 }
@@ -2452,11 +2446,15 @@ img {
   display: grid;
   gap: 2rem;
   margin-bottom: 3rem;
+  text-align: center;
+  justify-items: center;
 }
 
 @media (min-width: 768px) {
   .footer-grid {
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    text-align: left;
+    justify-items: stretch;
   }
 }
 
@@ -2497,25 +2495,25 @@ img {
 
 /* ===== Contract Modal ===== */
 .contract-modal {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 30px 60px rgba(5, 8, 20, 0.6);
 }
 
 .contract-modal .modal-close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--slate-100);
-  border: 1px solid var(--slate-200);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   cursor: pointer;
-  color: var(--slate-500);
+  color: var(--muted-foreground);
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -2526,16 +2524,16 @@ img {
 }
 
 .contract-modal .modal-close-btn:hover {
-  background: var(--slate-200);
-  color: var(--slate-900);
-  border-color: var(--slate-200);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--foreground);
+  border-color: var(--border);
 }
 
 .contract-modal-header {
   text-align: center;
   padding: 2rem 2rem 1rem;
-  border-bottom: 1px solid var(--slate-200);
-  background: var(--slate-50);
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
 }
 
 .contract-modal-icon {
@@ -2553,12 +2551,12 @@ img {
 
 .contract-modal-header h2 {
   font-size: 1.75rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 0.5rem;
 }
 
 .contract-modal-header p {
-  color: var(--slate-600);
+  color: var(--muted-foreground);
   font-size: 0.9375rem;
 }
 
@@ -2586,7 +2584,7 @@ img {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--slate-700);
+  color: var(--muted-foreground);
   margin-bottom: 0.375rem;
   letter-spacing: 0.02em;
 }
@@ -2596,22 +2594,22 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  background-color: var(--slate-50);
-  border: 1px solid var(--slate-200);
+  background-color: var(--background);
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  color: var(--slate-900);
+  color: var(--foreground);
 }
 
 .contract-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
-  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2);
+  background: var(--background);
 }
 
 .contract-modal .form-input::placeholder {
-  color: var(--slate-400);
+  color: var(--muted-foreground);
   font-size: 0.875rem;
 }
 
@@ -2620,14 +2618,14 @@ img {
   height: 3.25rem;
   font-size: 1rem;
   margin-top: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), hsl(200, 95%, 45%)) !important;
+  background: linear-gradient(135deg, var(--primary), #7c7bff) !important;
   color: var(--primary-foreground) !important;
-  box-shadow: 0 0 30px var(--primary-glow), 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 0 24px var(--primary-glow), 0 4px 16px rgba(5, 8, 20, 0.45) !important;
 }
 
 .btn-contract-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px var(--primary-glow), 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0 40px var(--primary-glow), 0 10px 28px rgba(5, 8, 20, 0.55) !important;
 }
 
 .contract-card:hover {
@@ -2644,7 +2642,7 @@ img {
 }
 
 .contract-modal-header {
-  border-bottom: 1px solid var(--slate-200) !important;
+  border-bottom: 1px solid var(--border) !important;
 }
 
 .contract-modal-icon {
@@ -2652,25 +2650,25 @@ img {
 }
 
 .fulltime-modal {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 30px 60px rgba(5, 8, 20, 0.6);
 }
 
 .fulltime-modal .modal-close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--slate-100);
-  border: 1px solid var(--slate-200);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   cursor: pointer;
-  color: var(--slate-500);
+  color: var(--muted-foreground);
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -2681,16 +2679,16 @@ img {
 }
 
 .fulltime-modal .modal-close-btn:hover {
-  background: var(--slate-200);
-  color: var(--slate-900);
-  border-color: var(--slate-200);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--foreground);
+  border-color: var(--border);
 }
 
 .fulltime-modal-header {
   text-align: center;
   padding: 2rem 2rem 1rem;
-  border-bottom: 1px solid var(--slate-200) !important;
-  background: var(--slate-50);
+  border-bottom: 1px solid var(--border) !important;
+  background: var(--background);
 }
 
 .fulltime-modal-icon {
@@ -2708,12 +2706,12 @@ img {
 
 .fulltime-modal-header h2 {
   font-size: 1.75rem;
-  color: var(--slate-900);
+  color: var(--foreground);
   margin-bottom: 0.5rem;
 }
 
 .fulltime-modal-header p {
-  color: var(--slate-600);
+  color: var(--muted-foreground);
   font-size: 0.9375rem;
 }
 
@@ -2741,7 +2739,7 @@ img {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--slate-700);
+  color: var(--muted-foreground);
   margin-bottom: 0.375rem;
   letter-spacing: 0.02em;
 }
@@ -2751,23 +2749,23 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  background-color: var(--slate-50);
-  border: 1px solid var(--slate-200);
+  background-color: var(--background);
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  color: var(--slate-900);
+  color: var(--foreground);
 }
 
 .fulltime-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
-  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2);
+  background: var(--background);
 }
 
 .fulltime-modal .form-input::placeholder {
-  color: var(--slate-400);
-  opacity: 0.5;
+  color: var(--muted-foreground);
+  opacity: 0.8;
 }
 
 .fulltime-modal .form-textarea {
@@ -2775,7 +2773,7 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  background-color: var(--card);
+  background-color: var(--background);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -2787,7 +2785,7 @@ img {
 .fulltime-modal .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15), 0 0 20px rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2), 0 0 20px rgba(111, 107, 255, 0.15);
   background: var(--background);
 }
 
