@@ -556,81 +556,94 @@
     </div>
   </div>
 
-  <!-- Full-Time/Part-Time Inquiry Modal -->
-  <div class="modal-overlay" id="fullTimeModal" onclick="closeModalOnOverlay(event, 'fullTimeModal')">
-    <div class="modal contract-modal">
-      <button class="modal-close-btn" onclick="closeModal('fullTimeModal')">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 6 6 18"/>
-          <path d="m6 6 12 12"/>
+ <!-- Full-Time/Part-Time Inquiry Modal -->
+<div class="modal-overlay" id="fullTimeModal" onclick="closeModalOnOverlay(event, 'fullTimeModal')">
+  <div class="modal contract-modal fulltime-modal">
+    <button class="modal-close-btn" onclick="closeModal('fullTimeModal')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"/>
+        <path d="m6 6 12 12"/>
+      </svg>
+    </button>
+    <div class="modal-header fulltime-modal-header">
+      <div class="fulltime-modal-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
         </svg>
-      </button>
-      <div class="modal-header contract-modal-header">
-        <div class="contract-modal-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-        </div>
-        <h2>Hire Full-Time/Part-Time</h2>
-        <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
       </div>
-      <div class="modal-body">
-        <form id="fullTimeForm" action="https://submit-form.com/GFMlEZkHU" method="POST">
-          <input type="hidden" name="_redirect" value="https://jrecruits.com/thanks.html" />
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="ftCompanyName">Company Name</label>
-              <input type="text" id="ftCompanyName" name="companyName" class="form-input" placeholder="Acme Inc." required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ftContactName">Contact Name</label>
-              <input type="text" id="ftContactName" name="contactName" class="form-input" placeholder="John Doe" required>
-            </div>
+      <h2>Hire Full-Time/Part-Time</h2>
+      <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
+    </div>
+    <div class="modal-body">
+      <form id="fullTimeForm" action="https://submit-form.com/GFMlEZkHU" method="POST">
+        <input type="hidden" name="_redirect" value="https://jrecruits.com/thanks.html" />
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ftCompanyName">Company Name</label>
+            <input type="text" id="ftCompanyName" name="companyName" class="form-input" placeholder="Acme Inc." required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ftContactName">Contact Name</label>
+            <input type="text" id="ftContactName" name="contactName" class="form-input" placeholder="John Doe" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ftPosition">Your Position at the Company</label>
+            <input type="text" id="ftPosition" name="yourPosition" class="form-input" placeholder="e.g., HR Manager, CTO, Hiring Manager">
           </div>
           <div class="form-group">
             <label class="form-label" for="ftEmail">Email Address</label>
             <input type="email" id="ftEmail" name="email" class="form-input" placeholder="john@company.com" required>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="ftPosition">Position Hiring For</label>
-              <input type="text" id="ftPosition" name="position" class="form-input" placeholder="e.g. Senior Backend Engineer" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ftLocation">Location</label>
-              <input type="text" id="ftLocation" name="location" class="form-input" placeholder="e.g. Addis Ababa, Remote" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="ftSalary">Salary Range</label>
-              <input type="text" id="ftSalary" name="salaryRange" class="form-input" placeholder="e.g. $2k - $4k / month" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="ftRoleType">Role Type</label>
-              <select id="ftRoleType" name="roleType" class="form-input" style="background: var(--input); color: white;">
-                <option value="full-time">Full-Time</option>
-                <option value="part-time">Part-Time</option>
-                <option value="both">Both</option>
-              </select>
-            </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ftPositionHiring">Position Hiring For</label>
+            <input type="text" id="ftPositionHiring" name="positionHiringFor" class="form-input" placeholder="e.g., Senior Backend Engineer" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="ftDescription">Role Description & Requirements</label>
-            <textarea id="ftDescription" name="roleDescription" class="form-textarea" placeholder="Tell us about the position, required skills, and experience level..." required></textarea>
+            <label class="form-label" for="ftRoleType">Role Type</label>
+            <select id="ftRoleType" name="roleType" class="form-input" required>
+              <option value="">Select role type...</option>
+              <option value="full-time">Full-Time</option>
+              <option value="part-time">Part-Time</option>
+              <option value="both">Open to Both</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; height: 3.5rem; font-size: 1.125rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-            Submit Hiring Request
-          </button>
-        </form>
-      </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ftLocation">Location</label>
+            <input type="text" id="ftLocation" name="location" class="form-input" placeholder="e.g., Addis Ababa, Remote, Hybrid" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ftSalary">Salary Range (USD or ETB)</label>
+            <input type="text" id="ftSalary" name="salaryRange" class="form-input" placeholder="e.g., $80,000 - $120,000 or 2,880,000 - 4,320,000 ETB" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ftDescription">Role Description & Requirements</label>
+          <textarea id="ftDescription" name="roleDescription" class="form-textarea" placeholder="Tell us about the position, required skills, experience level, and any other important details..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-contract-submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+          </svg>
+          Submit Hiring Request
+        </button>
+      </form>
     </div>
   </div>
+</div>
 
   <!-- Footer -->
   <footer class="footer">
