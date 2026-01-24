@@ -3,11 +3,11 @@
 /* ===== CSS Variables ===== */
 :root {
   /* Dark Tech Palette */
-  --background: #0b1023;
-  --background-secondary: #101b33;
+  --background: hsl(222, 47%, 6%);
+  --background-secondary: hsl(222, 40%, 8%);
   --foreground: #f4f6ff;
 
-  --card: #111d38;
+  --card: hsl(222, 40%, 10%);
   --card-foreground: #f4f6ff;
 
   /* Primary - JRecruits Violet */
@@ -23,11 +23,11 @@
   --accent: #53c3ff;
   --accent-glow: rgba(83, 195, 255, 0.3);
 
-  --muted: #16233f;
-  --muted-foreground: #9aa4bd;
+  --muted: hsl(222, 30%, 15%);
+  --muted-foreground: hsl(215, 20%, 55%);
 
-  --border: #1c2a4a;
-  --input: #142341;
+  --border: hsl(222, 30%, 18%);
+  --input: hsl(222, 30%, 15%);
   --ring: #6f6bff;
 
   --radius: 0.75rem;
@@ -726,7 +726,8 @@ img {
 }
 
 .employer-details-panel.active {
-  max-height: 2000px;
+  max-height: none;
+  overflow: visible;
   opacity: 1;
   margin-top: 2rem;
 }
@@ -915,7 +916,8 @@ img {
 }
 
 .candidate-details-panel.active {
-  max-height: 1000px;
+  max-height: none;
+  overflow: visible;
   opacity: 1;
   margin-top: 2rem;
 }
