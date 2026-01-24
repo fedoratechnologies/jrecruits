@@ -1822,6 +1822,7 @@ img {
   margin: 0;
   background: var(--slate-50);
   overflow: hidden;
+  width: 100%;
 }
 
 .trusted-by-banner-wrapper {
@@ -1833,7 +1834,7 @@ img {
   justify-content: center;
   align-items: center;
   background: #0a1628;
-  height: 400px; /* Adjust this number to make it taller or shorter */
+  min-height: 400px; /* Changed from height to min-height */
   overflow: hidden;
 }
 
@@ -1841,25 +1842,34 @@ img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain */
   object-position: center;
   transition: transform 0.5s ease;
+  max-height: 400px; /* Added max-height */
 }
 
 .trusted-by-banner-image:hover {
-  transform: scale(1.005);
+  transform: scale(1.02); /* Reduced from 1.005 to 1.02 for more visible effect */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .trusted-by-banner-wrapper {
-    height: 300px;
+    min-height: 300px;
+  }
+  
+  .trusted-by-banner-image {
+    max-height: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .trusted-by-banner-wrapper {
-    height: 250px;
+    min-height: 250px;
+  }
+  
+  .trusted-by-banner-image {
+    max-height: 250px;
   }
 }
 ```
