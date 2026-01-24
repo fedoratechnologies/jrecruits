@@ -11,24 +11,27 @@
   --card-foreground: #f4f6ff;
 
   /* Primary - JRecruits Violet */
-  --primary: #6f6bff;
-  --primary-glow: rgba(111, 107, 255, 0.35);
+  --primary: #7a78ff;
+  --primary-rgb: 122, 120, 255;
+  --primary-glow: rgba(var(--primary-rgb), 0.4);
   --primary-foreground: #0b1023;
 
   /* Secondary - Soft Indigo */
-  --secondary: #7f8cff;
-  --secondary-glow: rgba(127, 140, 255, 0.3);
+  --secondary: #8aa3ff;
+  --secondary-rgb: 138, 163, 255;
+  --secondary-glow: rgba(var(--secondary-rgb), 0.35);
 
   /* Accent - Cool Blue */
-  --accent: #53c3ff;
-  --accent-glow: rgba(83, 195, 255, 0.3);
+  --accent: #6ad1ff;
+  --accent-rgb: 106, 209, 255;
+  --accent-glow: rgba(var(--accent-rgb), 0.35);
 
   --muted: hsl(222, 30%, 15%);
   --muted-foreground: hsl(215, 20%, 55%);
 
   --border: hsl(222, 30%, 18%);
   --input: hsl(222, 30%, 15%);
-  --ring: #6f6bff;
+  --ring: var(--primary);
 
   --radius: 0.75rem;
 
@@ -250,7 +253,7 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #7c7bff);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--primary-foreground);
   box-shadow: 0 0 24px var(--primary-glow), 0 4px 16px rgba(5, 8, 20, 0.45);
 }
@@ -293,8 +296,8 @@ img {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(111, 107, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(111, 107, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(var(--primary-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.08) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
 }
@@ -425,8 +428,8 @@ img {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(111, 107, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(111, 107, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(var(--primary-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -599,7 +602,7 @@ img {
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(5, 8, 20, 0.5);
-  border-color: rgba(111, 107, 255, 0.35);
+  border-color: rgba(var(--primary-rgb), 0.35);
 }
 
 .service-icon {
@@ -1375,7 +1378,7 @@ img {
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.2);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
 }
 
 .form-input::placeholder,
@@ -1399,7 +1402,7 @@ img {
 
 .card:hover {
   box-shadow: 0 25px 50px -12px rgba(5, 8, 20, 0.55);
-  border-color: rgba(111, 107, 255, 0.35);
+  border-color: rgba(var(--primary-rgb), 0.35);
 }
 
 .card-body {
@@ -1504,7 +1507,7 @@ img {
 
 .search-box input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.2);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
   outline: none;
 }
 
@@ -1537,7 +1540,7 @@ img {
 
 .job-card:hover {
   box-shadow: 0 10px 25px -5px rgba(5, 8, 20, 0.6);
-  border-color: rgba(111, 107, 255, 0.35);
+  border-color: rgba(var(--primary-rgb), 0.35);
 }
 
 .job-card h3 {
@@ -1749,17 +1752,17 @@ img {
 }
 
 .benefit-icon.blue {
-  background: rgba(111, 107, 255, 0.18);
+  background: rgba(var(--primary-rgb), 0.18);
   color: var(--primary);
 }
 
 .benefit-icon.purple {
-  background: rgba(127, 140, 255, 0.18);
+  background: rgba(var(--secondary-rgb), 0.18);
   color: var(--secondary);
 }
 
 .benefit-icon.teal {
-  background: rgba(83, 195, 255, 0.18);
+  background: rgba(var(--accent-rgb), 0.18);
   color: var(--accent);
 }
 
@@ -1809,7 +1812,7 @@ img {
 }
 
 .trusted-by-logos img {
-  max-height: 64px;
+  max-height: 112px;
   width: auto;
   opacity: 1;
   filter: none;
@@ -1825,7 +1828,7 @@ img {
   }
 
   .trusted-by-logos img {
-    max-height: 52px;
+    max-height: 84px;
   }
 }
 
@@ -1965,21 +1968,21 @@ img {
 }
 
 .fulltime-card {
-  border-color: rgba(111, 107, 255, 0.45);
+  border-color: rgba(var(--primary-rgb), 0.45);
 }
 
 .fulltime-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 15px 30px rgba(111, 107, 255, 0.25);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.25);
 }
 
 .contract-card {
-  border-color: rgba(83, 195, 255, 0.45);
+  border-color: rgba(var(--accent-rgb), 0.45);
 }
 
 .contract-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 15px 30px rgba(83, 195, 255, 0.25);
+  box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.25);
 }
 
 .hiring-option-icon {
@@ -2212,7 +2215,7 @@ img {
 
 .feature-card:hover {
   box-shadow: 0 25px 50px -12px rgba(5, 8, 20, 0.6);
-  border-color: rgba(111, 107, 255, 0.35);
+  border-color: rgba(var(--primary-rgb), 0.35);
 }
 
 .feature-card-icon {
@@ -2231,12 +2234,12 @@ img {
 }
 
 .feature-card-icon.blue {
-  background: rgba(111, 107, 255, 0.15);
+  background: rgba(var(--primary-rgb), 0.15);
   color: var(--primary);
 }
 
 .feature-card-icon.purple {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(var(--secondary-rgb), 0.12);
   color: var(--secondary);
 }
 
@@ -2378,7 +2381,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(111, 107, 255, 0.2);
+  background: rgba(var(--primary-rgb), 0.2);
   filter: blur(32px);
   border-radius: 50%;
 }
@@ -2560,7 +2563,7 @@ img {
 .contract-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
   background: var(--background);
 }
 
@@ -2574,7 +2577,7 @@ img {
   height: 3.25rem;
   font-size: 1rem;
   margin-top: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), #7c7bff) !important;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
   color: var(--primary-foreground) !important;
   box-shadow: 0 0 24px var(--primary-glow), 0 4px 16px rgba(5, 8, 20, 0.45) !important;
 }
@@ -2715,7 +2718,7 @@ img {
 .fulltime-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
   background: var(--background);
 }
 
@@ -2741,7 +2744,7 @@ img {
 .fulltime-modal .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(111, 107, 255, 0.2), 0 0 20px rgba(111, 107, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2), 0 0 20px rgba(var(--primary-rgb), 0.15);
   background: var(--background);
 }
 
