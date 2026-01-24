@@ -1817,6 +1817,7 @@ img {
 }
 
 /* ===== Trusted By Section - Full Width Tech Banner ===== */
+/* ===== Trusted By Section - Full Width Tech Banner ===== */
 .section-trusted-by {
   padding: 0;
   margin: 0;
@@ -1833,8 +1834,6 @@ img {
   justify-content: center;
   align-items: center;
   background: #0a1628;
-  max-height: 400px; /* Add max height to contain the image */
-  overflow: hidden; /* Hide overflow */
 }
 
 .trusted-by-banner-image {
@@ -1843,8 +1842,6 @@ img {
   height: auto;
   display: block;
   transition: transform 0.5s ease;
-  object-fit: cover; /* This will crop the image to fit */
-  max-height: 400px; /* Match the wrapper height */
 }
 
 .trusted-by-banner-image:hover {
@@ -1853,22 +1850,14 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .trusted-by-banner-wrapper {
-    max-height: 300px; /* Shorter on tablets */
-  }
-  
   .trusted-by-banner-image {
-    max-height: 300px;
+    min-height: 300px;
   }
 }
 
 @media (max-width: 768px) {
-  .trusted-by-banner-wrapper {
-    max-height: 250px; /* Even shorter on mobile */
-  }
-  
   .trusted-by-banner-image {
-    max-height: 250px;
+    min-height: 250px;
   }
 }
 ```
