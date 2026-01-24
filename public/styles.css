@@ -1816,35 +1816,47 @@ img {
   color: var(--slate-600);
 }
 
-/* ===== Trusted By Section - Full Image Banner ===== */
+/* ===== Trusted By Section - Full Width Tech Banner ===== */
 .section-trusted-by {
   padding: 0;
   margin: 0;
-  width: 100%;
+  background: var(--slate-50);
   overflow: hidden;
+}
+
+.trusted-by-banner-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #0a1628;
 }
 
-.trusted-by-full-image {
+.trusted-by-banner-image {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: 0;
-  padding: 0;
-  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Optional: Add subtle hover effect */
-.trusted-by-full-image:hover {
-  opacity: 0.95;
-  transition: opacity 0.3s ease;
+.trusted-by-banner-image:hover {
+  transform: scale(1.005);
 }
 
-/* Responsive: Ensure image looks good on all devices */
-@media (max-width: 768px) {
-  .trusted-by-full-image {
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .trusted-by-banner-image {
     min-height: 400px;
-    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .trusted-by-banner-image {
+    min-height: 350px;
   }
 }
 ```
