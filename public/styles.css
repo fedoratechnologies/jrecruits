@@ -1855,7 +1855,7 @@ img {
 }
 
 .trusted-by-logos img {
-  max-height: 46px;
+  max-height: 64px;
   width: auto;
   opacity: 1;
   filter: none;
@@ -1871,7 +1871,7 @@ img {
   }
 
   .trusted-by-logos img {
-    max-height: 40px;
+    max-height: 52px;
   }
 }
 
