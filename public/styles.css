@@ -1886,6 +1886,7 @@ img {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
 .modal-overlay.active {
@@ -1900,6 +1901,8 @@ img {
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1911,6 +1914,8 @@ img {
 .modal-header {
   padding: 1.5rem;
   border-bottom: 1px solid var(--slate-200);
+  background: var(--slate-50);
+  border-radius: 1rem 1rem 0 0;
 }
 
 .modal-header h2 {
@@ -1926,16 +1931,19 @@ img {
 
 .modal-body {
   padding: 1.5rem;
+  background: var(--white);
 }
 
 /* ===== Hiring Type Modal ===== */
 .hiring-modal {
-  background: var(--slate-100);
+  background: var(--white);
   border-radius: 1.5rem;
   max-width: 720px;
   width: 100%;
   padding: 2.5rem;
   position: relative;
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1948,8 +1956,8 @@ img {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
-  border: none;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
   cursor: pointer;
   color: var(--slate-500);
   padding: 0.5rem;
@@ -1961,7 +1969,7 @@ img {
 }
 
 .modal-close-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--slate-200);
   color: var(--slate-900);
 }
 
@@ -2483,24 +2491,25 @@ img {
 
 /* ===== Contract Modal ===== */
 .contract-modal {
-  background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
-  border: 1px solid var(--border);
+  background: var(--white);
+  border: 1px solid var(--slate-200);
   border-radius: 1.5rem;
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
 }
 
 .contract-modal .modal-close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
   cursor: pointer;
-  color: var(--muted-foreground);
+  color: var(--slate-500);
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -2511,16 +2520,16 @@ img {
 }
 
 .contract-modal .modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--foreground);
-  border-color: var(--primary);
+  background: var(--slate-200);
+  color: var(--slate-900);
+  border-color: var(--slate-200);
 }
 
 .contract-modal-header {
   text-align: center;
   padding: 2rem 2rem 1rem;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(20, 184, 166, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--slate-200);
+  background: var(--slate-50);
 }
 
 .contract-modal-icon {
@@ -2538,16 +2547,12 @@ img {
 
 .contract-modal-header h2 {
   font-size: 1.75rem;
-  color: var(--foreground);
+  color: var(--slate-900);
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .contract-modal-header p {
-  color: var(--muted-foreground);
+  color: var(--slate-600);
   font-size: 0.9375rem;
 }
 
@@ -2575,7 +2580,7 @@ img {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--slate-700);
   margin-bottom: 0.375rem;
   letter-spacing: 0.02em;
 }
@@ -2585,22 +2590,22 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background-color: var(--slate-50);
+  border: 1px solid var(--slate-200);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  color: var(--foreground);
+  color: var(--slate-900);
 }
 
 .contract-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15), 0 0 20px rgba(20, 184, 166, 0.1);
-  background: var(--background);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+  background: var(--white);
 }
 
 .contract-modal .form-input::placeholder {
-  color: var(--muted-foreground);
+  color: var(--slate-400);
   font-size: 0.875rem;
 }
 
@@ -2633,32 +2638,33 @@ img {
 }
 
 .contract-modal-header {
-  border-bottom: 2px solid var(--primary) !important;
+  border-bottom: 1px solid var(--slate-200) !important;
 }
 
 .contract-modal-icon {
-  color: var(--primary) !important;
+  color: var(--white) !important;
 }
 
 .fulltime-modal {
-  background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
-  border: 1px solid var(--border);
+  background: var(--white);
+  border: 1px solid var(--slate-200);
   border-radius: 1.5rem;
   max-width: 800px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
 }
 
 .fulltime-modal .modal-close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
   cursor: pointer;
-  color: var(--muted-foreground);
+  color: var(--slate-500);
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
@@ -2669,16 +2675,16 @@ img {
 }
 
 .fulltime-modal .modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--foreground);
-  border-color: var(--primary);
+  background: var(--slate-200);
+  color: var(--slate-900);
+  border-color: var(--slate-200);
 }
 
 .fulltime-modal-header {
   text-align: center;
   padding: 2rem 2rem 1rem;
-  border-bottom: 2px solid var(--primary) !important;
-  background: linear-gradient(180deg, rgba(20, 184, 166, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--slate-200) !important;
+  background: var(--slate-50);
 }
 
 .fulltime-modal-icon {
@@ -2696,16 +2702,12 @@ img {
 
 .fulltime-modal-header h2 {
   font-size: 1.75rem;
-  color: var(--foreground);
+  color: var(--slate-900);
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .fulltime-modal-header p {
-  color: var(--muted-foreground);
+  color: var(--slate-600);
   font-size: 0.9375rem;
 }
 
@@ -2733,7 +2735,7 @@ img {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--slate-700);
   margin-bottom: 0.375rem;
   letter-spacing: 0.02em;
 }
@@ -2743,22 +2745,22 @@ img {
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background-color: var(--slate-50);
+  border: 1px solid var(--slate-200);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  color: var(--foreground);
+  color: var(--slate-900);
 }
 
 .fulltime-modal .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15), 0 0 20px rgba(20, 184, 166, 0.1);
-  background: var(--background);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+  background: var(--white);
 }
 
 .fulltime-modal .form-input::placeholder {
-  color: var(--muted-foreground);
+  color: var(--slate-400);
   opacity: 0.5;
 }
 
