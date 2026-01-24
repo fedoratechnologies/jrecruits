@@ -1833,8 +1833,8 @@ img {
   justify-content: center;
   align-items: center;
   background: #0a1628;
-  max-height: 350px; /* Shortened from no limit */
-  overflow: hidden;
+  max-height: 400px; /* Add max height to contain the image */
+  overflow: hidden; /* Hide overflow */
 }
 
 .trusted-by-banner-image {
@@ -1843,8 +1843,8 @@ img {
   height: auto;
   display: block;
   transition: transform 0.5s ease;
-  object-fit: cover;
-  max-height: 350px; /* Shortened from no limit */
+  object-fit: cover; /* This will crop the image to fit */
+  max-height: 400px; /* Match the wrapper height */
 }
 
 .trusted-by-banner-image:hover {
@@ -1854,21 +1854,21 @@ img {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .trusted-by-banner-wrapper {
-    max-height: 280px; /* Shortened from 400px */
+    max-height: 300px; /* Shorter on tablets */
   }
   
   .trusted-by-banner-image {
-    max-height: 280px;
+    max-height: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .trusted-by-banner-wrapper {
-    max-height: 220px; /* Shortened from 350px */
+    max-height: 250px; /* Even shorter on mobile */
   }
   
   .trusted-by-banner-image {
-    max-height: 220px;
+    max-height: 250px;
   }
 }
 ```
