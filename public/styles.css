@@ -1194,6 +1194,7 @@ img {
   gap: 1.5rem;
   max-width: 56rem;
   margin: 0 auto;
+  justify-items: center;
 }
 
 @media (min-width: 768px) {
@@ -1208,6 +1209,8 @@ img {
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 20rem;
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(20px);
