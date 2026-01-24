@@ -252,7 +252,8 @@ img {
   }
 
   .hero h1 {
-    font-size: 2.25rem;
+    font-size: clamp(1.8rem, 6vw, 2.25rem);
+    max-width: none;
   }
 
   /* Centering the "Start Hiring Risk Free" button on mobile */
@@ -274,13 +275,6 @@ img {
 
   .section {
     padding: 4rem 0;
-  }
-  .hero h1 br:not(.mobile-break) {
-    display: none;
-  }
-
-  .mobile-break {
-    display: block !important;
   }
 }
 
@@ -414,6 +408,11 @@ img {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 2rem;
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -1816,78 +1815,60 @@ img {
   color: var(--slate-600);
 }
 
-/* ===== Trusted By Section - Full Width Tech Banner ===== */
+/* ===== Trusted By Section ===== */
 .section-trusted-by {
-  padding: 0;
-  margin: 0;
-  background: #0a1628; /* Match the banner's dark blue background */
-  overflow: hidden;
-  width: 100%;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0;
 }
 
-.trusted-by-banner-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+.trusted-by-content {
+  text-align: center;
+}
+
+.trusted-by-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin: 0 0 1.5rem;
+}
+
+.trusted-by-logos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #0a1628;
-  overflow: hidden;
+  gap: 2.5rem;
 }
 
-.trusted-by-banner-image {
-  width: 100%;
-  height: auto; /* Changed to auto to maintain aspect ratio */
-  display: block;
-  transition: transform 0.5s ease;
+.trusted-by-logos img {
+  max-height: 48px;
+  width: auto;
+  opacity: 0.75;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.trusted-by-banner-image:hover {
-  transform: scale(1.02);
+.trusted-by-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .trusted-by-banner-wrapper {
-    padding: 2rem 0; /* Add some breathing room on smaller screens */
+@media (max-width: 600px) {
+  .section-trusted-by {
+    padding: 2.5rem 0;
+  }
+
+  .trusted-by-logos {
+    gap: 1.5rem;
+  }
+
+  .trusted-by-logos img {
+    max-height: 40px;
   }
 }
-
-@media (max-width: 768px) {
-  .trusted-by-banner-wrapper {
-    padding: 1.5rem 0;
-  }
-  
-  .trusted-by-banner-image {
-    max-width: 95%; /* Slight padding on mobile */
-    margin: 0 auto;
-  }
-}
-```
-
----
-
-## ✅ COMPLETE CHECKLIST
-
-- [ ] **Save your image** as `trusted-by-banner.png` in the `assets/` folder
-- [ ] **Replace the HTML** - Use the 3-line code above
-- [ ] **Delete old CSS** - Remove any old "Trusted By" styles
-- [ ] **Add new CSS** - Paste the code above to bottom of `styles.css`
-- [ ] **Test** - Refresh your browser and check!
-
----
-
-## 📋 FILE STRUCTURE
-
-Make sure your files are organized like this:
-```
-your-project/
-├── index.html
-├── styles.css
-└── assets/
-    └── trusted-by-banner.png  ← Your custom image here
 
 /* ===== Modal / Dialog ===== */
 .modal-overlay {
