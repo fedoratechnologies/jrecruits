@@ -374,7 +374,10 @@ async function submitToErpNext(env, request, formKind, form) {
   const ip = request.headers.get("CF-Connecting-IP") || "";
 
   const leadDoctype = String(env.ERPNEXT_LEAD_DOCTYPE || "Lead");
-  const applicantDoctype = String(env.ERPNEXT_APPLICANT_DOCTYPE || "Job Applicant");
+  // NOTE: ERPNext v15 commonly uses the separate "hrms" app for recruitment.
+  // If HRMS is not installed, "Job Applicant" won't exist. In that case, using
+  // Lead keeps the intake functional without extra apps.
+  const applicantDoctype = String(env.ERPNEXT_APPLICANT_DOCTYPE || leadDoctype || "Lead");
 
   if (kind === "employer_inquiry" || kind === "contract_inquiry" || kind === "fulltime_inquiry") {
     const companyName = String(get("companyName") || "").trim();
@@ -405,11 +408,11 @@ async function submitToErpNext(env, request, formKind, form) {
       userAgent,
     });
 
-    await erpCreateResource(env, "Comment", {
-      comment_type: "Comment",
-      reference_doctype: leadDoctype,
-      reference_name: lead.name,
-      content: details,
+    await erpCreateResource(env, "CRM Note", {
+      parenttype: leadDoctype,
+      parent: lead.name,
+      parentfield: "notes",
+      note: details,
     });
 
     return;
@@ -419,12 +422,6 @@ async function submitToErpNext(env, request, formKind, form) {
     const name = String(get("name") || "").trim();
     const email = String(get("email") || "").trim();
     const phone = String(get("phone") || "").trim();
-
-    const applicant = await erpCreateResource(env, applicantDoctype, {
-      applicant_name: name || "Website Applicant",
-      email_id: email || undefined,
-      phone_number: phone || undefined,
-    });
 
     const details = buildDetailsLines("Website submission (JRecruits)", {
       kind,
@@ -437,6 +434,60 @@ async function submitToErpNext(env, request, formKind, form) {
       coverLetter: get("coverLetter") || "",
       ip,
       userAgent,
+    });
+
+    const jobTitle = String(get("job_title") || get("roleOfInterest") || "").trim();
+    const resumeUrl = String(get("resumeUrl") || "").trim();
+
+    if (applicantDoctype === leadDoctype) {
+      const lead = await erpCreateResource(env, leadDoctype, {
+        lead_name: name || "Website Applicant",
+        email_id: email || undefined,
+        mobile_no: phone || undefined,
+        job_title: jobTitle || undefined,
+      });
+
+      await erpCreateResource(env, "CRM Note", {
+        parenttype: leadDoctype,
+        parent: lead.name,
+        parentfield: "notes",
+        note: details,
+      });
+
+      const resume = get("resume");
+      if (resume && typeof resume === "object" && "arrayBuffer" in resume) {
+        const file = resume;
+        const maxBytes = 10 * 1024 * 1024;
+        if (file.size > maxBytes) {
+          throw new Error("Resume file too large");
+        }
+        const allowed = [
+          "application/pdf",
+          "application/msword",
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        ];
+        if (file.type && !allowed.includes(file.type)) {
+          throw new Error("Unsupported resume file type");
+        }
+
+        await erpUploadFile(env, {
+          file,
+          doctype: leadDoctype,
+          docname: lead.name,
+          isPrivate: true,
+        });
+      } else if (resumeUrl) {
+        // If no file upload was provided, keep the URL in the note.
+      }
+
+      return;
+    }
+
+    // HRMS-style flow (if you set ERPNEXT_APPLICANT_DOCTYPE=Job Applicant)
+    const applicant = await erpCreateResource(env, applicantDoctype, {
+      applicant_name: name || "Website Applicant",
+      email_id: email || undefined,
+      phone_number: phone || undefined,
     });
 
     await erpCreateResource(env, "Comment", {

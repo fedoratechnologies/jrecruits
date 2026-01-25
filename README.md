@@ -14,9 +14,9 @@ In addition, submissions are forwarded to a secondary backup form collector (Sub
 - All forms post to `POST /api/forms/submit`.
 - If Turnstile is configured, the Worker validates the request.
 - The Worker creates:
-  - `Lead` + `Comment` for hiring/employer inquiries
-  - `Job Applicant` + `Comment` for candidate/job applications
-  - and uploads a resume (if provided) via `upload_file`, attached to the `Job Applicant`
+  - `Lead` + `CRM Note` for hiring/employer inquiries
+  - `Lead` + `CRM Note` for candidate/job applications (resume uploads are attached to the `Lead`)
+  - (optional) if you install HRMS and set `ERPNEXT_APPLICANT_DOCTYPE=Job Applicant`, candidate/job applications will be created as `Job Applicant`
 - The Worker also posts the same payload to SubmitForm (best-effort) so you have a backup if ERPNext is degraded.
 
 ## Required Cloudflare Worker configuration
@@ -27,7 +27,7 @@ In addition, submissions are forwarded to a secondary backup form collector (Sub
 - `TURNSTILE_SITE_KEY` (optional; Turnstile widget site key if you choose to inject it into HTML)
 - `ALLOWED_ORIGINS` (optional; comma-separated origins for CORS; use `*` to allow any)
 - `ERPNEXT_LEAD_DOCTYPE` (optional; default `Lead`)
-- `ERPNEXT_APPLICANT_DOCTYPE` (optional; default `Job Applicant`)
+- `ERPNEXT_APPLICANT_DOCTYPE` (optional; default `Lead`; set to `Job Applicant` if HRMS is installed)
 
 ### Secrets
 
@@ -63,10 +63,11 @@ Deploy:
 Each form includes a hidden `form_kind` used by the Worker:
 
 - `candidate_application` → `Job Applicant` (+ resume upload if provided)
-- `job_application` → `Job Applicant` (captures `job_title`, `resumeUrl`, `coverLetter`)
-- `employer_inquiry` → `Lead`
-- `contract_inquiry` → `Lead`
-- `fulltime_inquiry` → `Lead`
+- `candidate_application` → `Lead` (+ resume upload if provided)
+- `job_application` → `Lead` (captures `job_title`, `resumeUrl`, `coverLetter`)
+  - `employer_inquiry` → `Lead`
+  - `contract_inquiry` → `Lead`
+  - `fulltime_inquiry` → `Lead`
 
 ## Limits
 
