@@ -1391,6 +1391,13 @@ img {
   resize: vertical;
 }
 
+/* ===== Turnstile ===== */
+.turnstile-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1.25rem;
+}
+
 /* ===== Cards ===== */
 .card {
   background: var(--card);

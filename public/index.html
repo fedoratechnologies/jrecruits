@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JRecruits - The Right Talent. The First Time. Every Time.</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <!-- Navigation -->
@@ -495,8 +496,9 @@
         <p>Tell us about your project needs and we'll connect you with the right talent.</p>
       </div>
       <div class="modal-body">
-        <form id="contractForm" action="https://submit-form.com/z6W0WdCa4" method="POST">
-          <input type="hidden" name="_redirect" value="https://jrecruits.falling-mouse-beeb.workers.dev/thanks">
+        <form id="contractForm" action="/api/forms/submit" method="POST">
+          <input type="hidden" name="form_kind" value="contract_inquiry" />
+          <input type="hidden" name="_redirect" value="/thanks" />
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="contractCompanyName">Company Name</label>
@@ -547,10 +549,12 @@
               <input type="text" id="workLocation" name="workLocation" class="form-input" placeholder="City, Country">
             </div>
           </div>
-            <div class="form-group">
-              <label class="form-label" for="message">Brief Description</label>
-              <input type="text" id="message" name="message-textarea" class="form-input" placeholder="Tell us about the roles you're looking to fill...">
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Brief Description</label>
+            <input type="text" id="message" name="message" class="form-input" placeholder="Tell us about the roles you're looking to fill...">
+          </div>
+          <div class="turnstile-wrap">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACPC2VOnfI1_QfHu" data-theme="dark"></div>
           </div>
           <button type="submit" class="btn btn-primary btn-contract-submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -584,8 +588,9 @@
       <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
     </div>
     <div class="modal-body">
-      <form id="fullTimeForm" action="https://submit-form.com/GFMlEZkHU" method="POST">
-        <input type="hidden" name="_redirect" value="https://jrecruits.falling-mouse-beeb.workers.dev/thanks" />
+      <form id="fullTimeForm" action="/api/forms/submit" method="POST">
+        <input type="hidden" name="form_kind" value="fulltime_inquiry" />
+        <input type="hidden" name="_redirect" value="/thanks" />
         
         <div class="form-row">
           <div class="form-group">
@@ -639,6 +644,10 @@
         <div class="form-group">
           <label class="form-label" for="ftDescription">Role Description & Requirements</label>
           <textarea id="ftDescription" name="roleDescription" class="form-textarea" placeholder="Tell us about the position, required skills, experience level, and any other important details..." required></textarea>
+        </div>
+
+        <div class="turnstile-wrap">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAACPC2VOnfI1_QfHu" data-theme="dark"></div>
         </div>
 
         <button type="submit" class="btn btn-primary btn-contract-submit">
@@ -696,6 +705,21 @@
   </footer>
 
   <script>
+    // Normalize redirect targets: convert local paths like "/thanks.html"
+    // into "https://<current-host>/thanks.html" before submitting.
+    function normalizeRedirectInputs() {
+      document.querySelectorAll('input[name="_redirect"]').forEach((input) => {
+        const raw = (input.value || '').trim();
+        if (!raw) return;
+        if (/^https?:\/\//i.test(raw)) return;
+
+        const path = raw.startsWith('/') ? raw : `/${raw}`;
+        input.value = `${window.location.origin}${path}`;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', normalizeRedirectInputs);
+
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');

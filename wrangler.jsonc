@@ -5,6 +5,11 @@
   "assets": {
     "directory": "public",
     "binding": "ASSETS"
+  },
+  "vars": {
+    "ERPNEXT_BASE_URL": "https://jrecruits.fedoratechnology.com",
+    "ALLOWED_ORIGINS": "*",
+    "ERPNEXT_LEAD_DOCTYPE": "Lead",
+    "ERPNEXT_APPLICANT_DOCTYPE": "Job Applicant"
   }
 }
-

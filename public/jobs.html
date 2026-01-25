@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Your Next Role - JRecruits</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <!-- Navigation -->
@@ -173,8 +174,9 @@
         <h2>Candidate Application</h2>
       </div>
       <div class="modal-body">
-        <form id="applicationForm" action="https://submit-form.com/sTQw7tXEo" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_redirect" value="https://jrecruits.falling-mouse-beeb.workers.dev/thanks">
+        <form id="applicationForm" action="/api/forms/submit" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="form_kind" value="candidate_application" />
+          <input type="hidden" name="_redirect" value="/thanks" />
           <div class="form-group">
             <label class="form-label" for="name">Full Name</label>
             <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
@@ -199,6 +201,9 @@
               <p id="fileName">No file chosen</p>
               <span>PDF, DOCX up to 10MB</span>
             </div>
+          </div>
+          <div class="turnstile-wrap">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACPC2VOnfI1_QfHu" data-theme="dark"></div>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%; height: 3rem; font-size: 1.125rem;">
             Submit Application
