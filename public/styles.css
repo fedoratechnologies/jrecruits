@@ -67,7 +67,15 @@
   --brand-gradient-horizontal: linear-gradient(90deg, var(--brand-sky) 0%, var(--brand-blue) 22%, var(--primary) 52%, var(--brand-lilac) 78%, var(--brand-pink) 100%);
 
   /* Homepage (hero) slogan gradient */
-  --hero-slogan-gradient: linear-gradient(135deg, #5a51d6 0%, #3b2f78 46%, #903fb0 100%);
+  --hero-slogan-gradient: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #5a51d6 26%,
+    #3b2f78 48%,
+    #903fb0 72%,
+    var(--brand-pink) 88%,
+    #fb7185 100%
+  );
 }
 
 /* ===== Base Styles ===== */
@@ -378,7 +386,10 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 56px rgba(var(--primary-rgb), 0.24), 0 0 92px rgba(244, 114, 182, 0.18);
+  text-shadow:
+    0 0 56px rgba(var(--primary-rgb), 0.26),
+    0 0 92px rgba(244, 114, 182, 0.22),
+    0 0 124px rgba(251, 113, 133, 0.18);
   margin-bottom: 2rem;
 }
 
