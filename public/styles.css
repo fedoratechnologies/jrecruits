@@ -149,7 +149,7 @@ img {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(90deg, #4f8cff 0%, var(--primary) 55%, var(--purple-600) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -360,7 +360,7 @@ img {
 .hero h1 {
   font-size: 3rem;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(135deg, #4f8cff 0%, var(--primary) 55%, var(--purple-600) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
