@@ -149,7 +149,7 @@ img {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
-  background: linear-gradient(90deg, #69d1ff 0%, #4f8cff 25%, var(--primary) 55%, #b56bff 78%, #ff72d8 100%);
+  background: linear-gradient(90deg, #7dd3fc 0%, #60a5fa 22%, var(--primary) 52%, #c084fc 78%, #f472b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -360,11 +360,11 @@ img {
 .hero h1 {
   font-size: 3rem;
   line-height: 1.1;
-  background: linear-gradient(135deg, #69d1ff 0%, #4f8cff 28%, var(--primary) 58%, #b56bff 78%, #ff72d8 100%);
+  background: linear-gradient(135deg, #7dd3fc 0%, #60a5fa 24%, var(--primary) 54%, #c084fc 78%, #f472b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 48px rgba(var(--primary-rgb), 0.18), 0 0 72px rgba(255, 114, 216, 0.12);
+  text-shadow: 0 0 56px rgba(var(--primary-rgb), 0.24), 0 0 92px rgba(244, 114, 182, 0.18);
   margin-bottom: 2rem;
 }
 
