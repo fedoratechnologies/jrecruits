@@ -398,6 +398,11 @@ img {
   white-space: nowrap;
 }
 
+.hero h1 .hero-line:first-child {
+  -webkit-text-fill-color: var(--white);
+  color: var(--white);
+}
+
 .hero-subtitle {
   font-size: 1.125rem;
   color: var(--white);
