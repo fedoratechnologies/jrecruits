@@ -69,12 +69,12 @@
   /* Homepage (hero) slogan gradient */
   --hero-slogan-gradient: linear-gradient(
     135deg,
-    var(--accent) 0%,
-    #5a51d6 26%,
-    #3b2f78 48%,
-    #903fb0 72%,
-    var(--brand-pink) 88%,
-    #fb7185 100%
+    #38bdf8 0%,
+    #60a5fa 18%,
+    #5a51d6 40%,
+    #3b2f78 56%,
+    #903fb0 74%,
+    var(--brand-pink) 100%
   );
 }
 
