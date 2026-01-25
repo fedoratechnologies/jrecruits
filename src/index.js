@@ -373,6 +373,15 @@ async function submitToErpNext(env, request, formKind, form) {
   const userAgent = request.headers.get("User-Agent") || "";
   const ip = request.headers.get("CF-Connecting-IP") || "";
 
+  const leadSourceByKind = {
+    employer_inquiry: "JRecruits Website - Employer Inquiry",
+    contract_inquiry: "JRecruits Website - Contract Project",
+    fulltime_inquiry: "JRecruits Website - Full-Time Hiring",
+    candidate_application: "JRecruits Website - General Application",
+    job_application: "JRecruits Website - Specific Job Apply",
+  };
+  const leadSource = leadSourceByKind[kind] || "";
+
   const leadDoctype = String(env.ERPNEXT_LEAD_DOCTYPE || "Lead");
   // NOTE: ERPNext v15 commonly uses the separate "hrms" app for recruitment.
   // If HRMS is not installed, "Job Applicant" won't exist. In that case, using
@@ -388,6 +397,7 @@ async function submitToErpNext(env, request, formKind, form) {
       lead_name: contactName || companyName || "Website Inquiry",
       company_name: companyName || undefined,
       email_id: email || undefined,
+      source: leadSource || undefined,
     });
 
     const details = buildDetailsLines("Website submission (JRecruits)", {
@@ -445,6 +455,7 @@ async function submitToErpNext(env, request, formKind, form) {
         email_id: email || undefined,
         mobile_no: phone || undefined,
         job_title: jobTitle || undefined,
+        source: leadSource || undefined,
       });
 
       await erpCreateResource(env, "CRM Note", {
