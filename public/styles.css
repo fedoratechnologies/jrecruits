@@ -907,6 +907,11 @@ img {
   margin-top: 2rem;
 }
 
+.services-grid .employer-details-panel.active,
+.services-grid .candidate-details-panel.active {
+  margin-top: 0;
+}
+
 .candidate-details-header {
   display: flex;
   align-items: center;

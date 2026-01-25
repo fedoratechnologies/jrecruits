@@ -150,6 +150,7 @@
         </div>
       </div>
 
+      <div id="employerDetailsMount"></div>
       <!-- Employer Details Panel -->
       <div class="employer-details-panel" id="employerDetailsPanel">
         <div class="employer-details-header">
@@ -228,6 +229,7 @@
         </div>
       </div>
 
+      <div id="candidateDetailsMount"></div>
       <!-- Candidate Details Panel -->
       <div class="candidate-details-panel" id="candidateDetailsPanel">
         <div class="candidate-details-header">
@@ -773,12 +775,57 @@
     document.addEventListener('DOMContentLoaded', () => {
       normalizeRedirectInputs();
       wireHireTalentForms();
+      syncServiceDetailsPanelsLayout();
     });
 
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
     }
+
+    function syncServiceDetailsPanelsLayout() {
+      const servicesGrid = document.querySelector('.services-grid');
+      const employerCard = document.getElementById('employersCard');
+      const candidateCard = document.getElementById('candidatesCard');
+      const employerPanel = document.getElementById('employerDetailsPanel');
+      const candidatePanel = document.getElementById('candidateDetailsPanel');
+      const employerMount = document.getElementById('employerDetailsMount');
+      const candidateMount = document.getElementById('candidateDetailsMount');
+
+      if (
+        !servicesGrid ||
+        !employerCard ||
+        !candidateCard ||
+        !employerPanel ||
+        !candidatePanel ||
+        !employerMount ||
+        !candidateMount
+      ) {
+        return;
+      }
+
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+      if (!isMobile) {
+        employerMount.insertAdjacentElement('afterend', employerPanel);
+        candidateMount.insertAdjacentElement('afterend', candidatePanel);
+        return;
+      }
+
+      if (employerPanel.classList.contains('active')) {
+        employerCard.insertAdjacentElement('afterend', employerPanel);
+      } else {
+        employerMount.insertAdjacentElement('afterend', employerPanel);
+      }
+
+      if (candidatePanel.classList.contains('active')) {
+        candidateCard.insertAdjacentElement('afterend', candidatePanel);
+      } else {
+        candidateMount.insertAdjacentElement('afterend', candidatePanel);
+      }
+    }
+
+    window.addEventListener('resize', syncServiceDetailsPanelsLayout);
 
     // Toggle employer details panel
     function toggleEmployerDetails() {
@@ -795,6 +842,7 @@
       
       panel.classList.toggle('active');
       card.classList.toggle('expanded');
+      syncServiceDetailsPanelsLayout();
     }
 
     // Toggle candidate details panel
@@ -812,6 +860,7 @@
       
       panel.classList.toggle('active');
       card.classList.toggle('expanded');
+      syncServiceDetailsPanelsLayout();
     }
 
     // Modal functions
