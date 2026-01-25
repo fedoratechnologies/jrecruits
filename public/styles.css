@@ -65,6 +65,9 @@
   --brand-pink: #f472b6;
   --brand-gradient-diagonal: linear-gradient(135deg, var(--brand-sky) 0%, var(--brand-blue) 24%, var(--primary) 54%, var(--brand-lilac) 78%, var(--brand-pink) 100%);
   --brand-gradient-horizontal: linear-gradient(90deg, var(--brand-sky) 0%, var(--brand-blue) 22%, var(--primary) 52%, var(--brand-lilac) 78%, var(--brand-pink) 100%);
+
+  /* Homepage (hero) slogan gradient */
+  --hero-slogan-gradient: linear-gradient(135deg, #5a51d6 0%, #3b2f78 46%, #903fb0 100%);
 }
 
 /* ===== Base Styles ===== */
@@ -347,7 +350,10 @@ img {
   font-family: 'Sora', sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  color: var(--white);
+  background: var(--hero-slogan-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
@@ -368,7 +374,7 @@ img {
 .hero h1 {
   font-size: 3rem;
   line-height: 1.1;
-  background: var(--brand-gradient-diagonal);
+  background: var(--hero-slogan-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
