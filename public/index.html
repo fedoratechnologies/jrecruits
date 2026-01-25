@@ -496,7 +496,7 @@
         <p>Tell us about your project needs and we'll connect you with the right talent.</p>
       </div>
       <div class="modal-body">
-        <form id="contractForm" action="/api/forms/submit" method="POST">
+        <form id="contractForm" action="/api/forms/submit" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="form_kind" value="contract_inquiry" />
           <input type="hidden" name="_redirect" value="/thanks" />
           <div class="form-row">
@@ -588,7 +588,7 @@
       <p>Looking for long-term talent? Tell us about the roles you need to fill.</p>
     </div>
     <div class="modal-body">
-      <form id="fullTimeForm" action="/api/forms/submit" method="POST">
+      <form id="fullTimeForm" action="/api/forms/submit" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="form_kind" value="fulltime_inquiry" />
         <input type="hidden" name="_redirect" value="/thanks" />
         
@@ -718,7 +718,62 @@
       });
     }
 
-    document.addEventListener('DOMContentLoaded', normalizeRedirectInputs);
+    async function submitFormAndRedirect(form) {
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalHtml = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Submitting...";
+      }
+
+      try {
+        const resp = await fetch(form.action, {
+          method: form.method || "POST",
+          body: new FormData(form),
+          redirect: "follow",
+        });
+
+        if (resp.redirected) {
+          window.location.assign(resp.url);
+          return;
+        }
+
+        if (resp.ok) {
+          const redirectInput = form.querySelector('input[name="_redirect"]');
+          const redirectValue = (redirectInput?.value || "/thanks").trim() || "/thanks";
+          const redirectUrl = new URL(redirectValue, window.location.origin).toString();
+          window.location.assign(redirectUrl);
+          return;
+        }
+
+        const msg = (await resp.text().catch(() => "")).trim();
+        alert(msg || "Failed to submit form. Please try again.");
+      } catch (err) {
+        console.error("form_submit_error", err);
+        alert("Failed to submit form. Please try again.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHtml || "Submit";
+        }
+      }
+    }
+
+    function wireHireTalentForms() {
+      ["contractForm", "fullTimeForm"].forEach((id) => {
+        const form = document.getElementById(id);
+        if (!form) return;
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          submitFormAndRedirect(form);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      normalizeRedirectInputs();
+      wireHireTalentForms();
+    });
 
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
