@@ -358,10 +358,7 @@ img {
   font-family: 'Sora', sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  background: var(--hero-slogan-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
@@ -396,11 +393,6 @@ img {
 .hero-line {
   display: block;
   white-space: nowrap;
-}
-
-.hero h1 .hero-line:first-child {
-  -webkit-text-fill-color: var(--white);
-  color: var(--white);
 }
 
 .hero-subtitle {
