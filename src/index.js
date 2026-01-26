@@ -237,20 +237,27 @@ async function submitToSubmitFormFallback(formKind, form, contentType) {
   let body;
   let headers = undefined;
 
-  if (contentType.includes("application/x-www-form-urlencoded")) {
-    body = asUrlEncoded(form);
-    headers = { "content-type": "application/x-www-form-urlencoded" };
-  } else if (contentType.includes("application/json") && form instanceof Map) {
+  // Formspark (submit-form.com) expects urlencoded or json payloads.
+  // Multipart requests are treated as "empty", so we always down-convert
+  // FormData to urlencoded (skipping non-string values like files).
+  if (contentType.includes("application/json") && form instanceof Map) {
     body = JSON.stringify(Object.fromEntries(form.entries()));
     headers = { "content-type": "application/json" };
   } else {
-    body = cloneFormData(form);
+    body = asUrlEncoded(form);
+    headers = { "content-type": "application/x-www-form-urlencoded" };
   }
 
   // Backwards-compat for historical field naming on Contract Project.
-  if (kind === "contract_inquiry" && body instanceof FormData) {
-    if (!body.has("message-textarea") && body.has("message")) {
-      body.append("message-textarea", String(body.get("message") || ""));
+  if (kind === "contract_inquiry") {
+    if (body instanceof URLSearchParams) {
+      if (!body.has("message-textarea") && body.has("message")) {
+        body.append("message-textarea", String(body.get("message") || ""));
+      }
+    } else if (body instanceof FormData) {
+      if (!body.has("message-textarea") && body.has("message")) {
+        body.append("message-textarea", String(body.get("message") || ""));
+      }
     }
   }
 
