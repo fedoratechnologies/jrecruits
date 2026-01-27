@@ -47,16 +47,32 @@ Cloudflare Access (only if your ERPNext is protected by a service token):
 
 ## Deploy / update via Wrangler
 
-Set secrets:
+This repo is split into two Wrangler environments so normal deploys don’t touch production:
+
+- **Dev (default)**: Worker name `jrecruits-dev` (`wrangler deploy`)
+- **Production**: Worker name `jrecruits` (`wrangler deploy --env prod`)
+
+Set secrets (dev):
 
 - `wrangler secret put ERPNEXT_API_TOKEN`
 - `wrangler secret put TURNSTILE_SECRET`
 - `wrangler secret put CF_ACCESS_CLIENT_ID` (optional)
 - `wrangler secret put CF_ACCESS_CLIENT_SECRET` (optional)
 
-Deploy:
+Set secrets (prod):
+
+- `wrangler secret put ERPNEXT_API_TOKEN --env prod`
+- `wrangler secret put TURNSTILE_SECRET --env prod`
+- `wrangler secret put CF_ACCESS_CLIENT_ID --env prod` (optional)
+- `wrangler secret put CF_ACCESS_CLIENT_SECRET --env prod` (optional)
+
+Deploy (dev):
 
 - `wrangler deploy`
+
+Deploy (prod):
+
+- `wrangler deploy --env prod`
 
 ## Form kinds
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_URL="${1:-https://jrecruits.falling-mouse-beeb.workers.dev}"
+BASE_URL="${1:-https://jrecruits-dev.falling-mouse-beeb.workers.dev}"
 
 fail() {
   echo "FAIL: $*" >&2

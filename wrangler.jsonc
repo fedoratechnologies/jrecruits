@@ -1,5 +1,6 @@
 {
-  "name": "jrecruits",
+  // Default deploy target (dev): `wrangler deploy`
+  "name": "jrecruits-dev",
   "main": "src/index.js",
   "compatibility_date": "2025-12-27",
   "assets": {
@@ -11,5 +12,11 @@
     "ALLOWED_ORIGINS": "*",
     "ERPNEXT_LEAD_DOCTYPE": "Lead",
     "ERPNEXT_APPLICANT_DOCTYPE": "Lead"
+  },
+  "env": {
+    // Production deploy target: `wrangler deploy --env prod`
+    "prod": {
+      "name": "jrecruits"
+    }
   }
 }
