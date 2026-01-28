@@ -136,6 +136,16 @@ async function handleFormSubmit(request, env, ctx) {
   const formKind = String(get("form_kind") || "").trim();
   const redirectPath = String(get("_redirect") || "/thanks").trim() || "/thanks";
 
+  const phone = String(get("phone") || "").trim();
+  if (
+    ["contract_inquiry", "fulltime_inquiry", "employer_inquiry", "candidate_application", "job_application"].includes(
+      formKind,
+    ) &&
+    !phone
+  ) {
+    return withCors(request, env, new Response("Phone number is required", { status: 400 }));
+  }
+
   // Turnstile (optional but recommended; enforced when TURNSTILE_SECRET is set)
   const tsSecret = String(env.TURNSTILE_SECRET || "");
   if (tsSecret) {
@@ -399,11 +409,13 @@ async function submitToErpNext(env, request, formKind, form) {
     const companyName = String(get("companyName") || "").trim();
     const contactName = String(get("name") || get("contactName") || "").trim();
     const email = String(get("email") || "").trim();
+    const phone = String(get("phone") || "").trim();
 
     const lead = await erpCreateResource(env, leadDoctype, {
       lead_name: contactName || companyName || "Website Inquiry",
       company_name: companyName || undefined,
       email_id: email || undefined,
+      mobile_no: phone || undefined,
       source: leadSource || undefined,
     });
 
@@ -412,6 +424,7 @@ async function submitToErpNext(env, request, formKind, form) {
       companyName,
       contactName,
       email,
+      phone,
       position: get("position") || get("yourPosition") || "",
       rolesHiringFor: get("rolesHiringFor") || get("roles") || get("positionHiringFor") || "",
       salaryRange: get("salaryRange") || get("rateRange") || "",
